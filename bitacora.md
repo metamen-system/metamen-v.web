@@ -129,3 +129,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Página 404 global implementada en `src/app/not-found.tsx` como Server Component con fondo `#0A0A0A`, título `404` en `#FF073A`, subtítulo en `#B0B0B0` y link `Volver al inicio` en `#D4AF37`.
 
+### M01-016 — Crear loading global placeholder
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/loading.tsx`
+  - Modificados: ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (aprobó a la primera)
+- **Commit:** `feat(M01-016): add global loading placeholder with pulse animation`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Placeholder global de carga implementado como Server Component con `role="status"`, `sr-only`, fondo `#0A0A0A` e indicador `48x48` con `animate-pulse` y fondo `#1A1A1A`.
+
