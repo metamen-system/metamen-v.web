@@ -12,16 +12,16 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-002` — Inicializar proyecto Next.js 15 con App Router |
-| Próxima tarea           | `M01-003` — Configurar TypeScript strict mode           |
+| Última tarea completada | `M01-010` — Instalar dependencias de desarrollo (linting y formateo) |
+| Próxima tarea           | `M01-011` — Configurar TypeScript strict mode           |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
-| Branch                  | setup/M01-base-infrastructure                            |
+| Branch                  | tooling/M01-quality-ci                                   |
 
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [██░░░░░░░░] 2/110  ← EN CURSO
+M01: Infraestructura             [█░░░░░░░░░] 10/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -47,21 +47,24 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 2 tareas completadas.
+* **Total actual**: 10 tareas completadas.
 
-### [M01-001] — Crear repositorio GitHub para METAMEN100
-* **Estado**: ✅ COMPLETADA
-* **Fecha**: 2026-02-21
-* **Archivos**: N/A
-* **Test**: N/A
-* **Commit**: N/A
-* **Agente**: Humano
-
-### [M01-002] — Inicializar proyecto Next.js 15 con App Router
-* **Estado**: ✅ APROBADA (100%)
-* **Fecha**: 2026-04-04
-* **Archivos**: package.json, pnpm-lock.yaml, src/app/layout.tsx, src/app/page.tsx
-* **Corrección aplicada**: Renombrar `package.json.name` de `metamen100-temp` → `metamen-v.web`
-* **Ciclos de corrección**: 1
-* **Rama**: `setup/M01-base-infrastructure`
-* **Commit**: `chore(M01-002): initialize Next.js 15 project with App Router`
+### BLOQUE M01-001 a M01-010 (RESUMEN CONSOLIDADO)
+* **Rango**: `M01-001` → `M01-010`
+* **Estado global**: ✅ COMPLETADO / APROBADO
+* **Corte**: 2026-04-05
+* **Resumen**:
+  - `M01-001` Repositorio GitHub creado
+  - `M01-002` Inicialización Next.js 15 App Router
+  - `M01-003` Configuración `.npmrc` para pnpm estricto
+  - `M01-004` `engines` + `packageManager` en `package.json`
+  - `M01-005` `pnpm-workspace.yaml` mínimo funcional
+  - `M01-006` Dependencias de producción (estado/validación/fechas)
+  - `M01-007` Dependencias de producción (servicios e integraciones)
+  - `M01-008` Dependencias de producción (UI y utilidades)
+  - `M01-009` Dependencias de desarrollo (testing)
+  - `M01-010` Dependencias de desarrollo (linting y formateo)
+* **Notas**:
+  - Se aceptó excepción técnica de `pnpm-workspace.yaml` por integridad de workspace pnpm.
+  - Se mantiene `recharts` fuera por conflicto SSOT/documentación y política vigente.
+  - Auditorías de cierre de los ciclos recientes: 100%.
