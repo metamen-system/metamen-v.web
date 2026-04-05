@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.8.0",
+    "@eslint/eslintrc": "^3.3.5",
     "@faker-js/faker": "^8.4.0",
     "@playwright/test": "^1.48.0",
     "@tailwindcss/postcss": "^4",
