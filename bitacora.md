@@ -116,3 +116,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Implementado error boundary global como Client Component con `useEffect` para `console.error(error)`, visual con tokens SSOT y botón `Reintentar` que ejecuta `reset()`.
 
+### M01-015 — Crear página not-found global
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/not-found.tsx`
+  - Modificados: ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (aprobó a la primera)
+- **Commit:** `feat(M01-015): add global not-found page with 404 UI`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Página 404 global implementada en `src/app/not-found.tsx` como Server Component con fondo `#0A0A0A`, título `404` en `#FF073A`, subtítulo en `#B0B0B0` y link `Volver al inicio` en `#D4AF37`.
+
