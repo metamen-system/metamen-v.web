@@ -103,3 +103,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Se creó el Server Component `RootLayout` como default export. Se incluyeron fuentes `Inter` y `Space_Grotesk` con las variables y subsets indicados. Se configuró metadatos con el título y description correctas, el viewport themeColor en rojo oscuro, y body con las configuraciones CSS globales sin imports locales adicionales.
 
+### M01-014 — Crear global error boundary
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/error.tsx`
+  - Modificados: ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (aprobó a la primera)
+- **Commit:** `feat(M01-014): add global error boundary with reset functionality`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Implementado error boundary global como Client Component con `useEffect` para `console.error(error)`, visual con tokens SSOT y botón `Reintentar` que ejecuta `reset()`.
+
