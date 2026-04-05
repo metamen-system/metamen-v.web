@@ -12,11 +12,19 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-010` — Instalar dependencias de desarrollo (linting y formateo) |
-| Próxima tarea           | `M01-011` — Configurar TypeScript strict mode           |
+| Última tarea completada | `M01-012` — Crear root layout con metadatos base y estructura HTML |
+| Próxima tarea           | `M01-013` — (pendiente de definición)                           |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | tooling/M01-quality-ci                                   |
+
+## DEUDA TÉCNICA PENDIENTE
+
+| ID Deuda | Descripción | Archivo afectado | Asignada a | Severidad |
+| -------- | ----------- | ---------------- | ---------- | --------- |
+| DT-001 | `eslint.config.mjs` importa `eslint-config-next/core-web-vitals` sin extensión `.js`. ESLint 9 con módulos ESM estrictos falla al resolver el módulo. Fix: cambiar a `eslint-config-next/core-web-vitals.js` | `eslint.config.mjs` | **M01-085** | 🟡 IMPORTANTE — bloquea `pnpm lint` |
+
+---
 
 ## MAPA DE PROGRESO (MODULOS CORE)
 
@@ -47,7 +55,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 10 tareas completadas.
+* **Total actual**: 12 tareas completadas.
 
 ### BLOQUE M01-001 a M01-010 (RESUMEN CONSOLIDADO)
 * **Rango**: `M01-001` → `M01-010`
@@ -68,3 +76,30 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Se aceptó excepción técnica de `pnpm-workspace.yaml` por integridad de workspace pnpm.
   - Se mantiene `recharts` fuera por conflicto SSOT/documentación y política vigente.
   - Auditorías de cierre de los ciclos recientes: 100%.
+
+### M01-011 — Configurar tsconfig.json con modo estricto completo
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: ninguno
+  - Modificados: `tsconfig.json`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (aprobó a la primera)
+- **Commit:** `config(M01-011): configure tsconfig.json with full strict mode`
+- **Rama:** `setup/M01-base-infrastructure`
+- **Notas:** target ES2022, strict completo explícito (10 flags), noUncheckedIndexedAccess, exactOptionalPropertyTypes, path alias @/* → ./src/* con baseUrl ".". pnpm tsc --noEmit → EXIT:0 sin errores. Bug pre-existente en eslint.config.mjs (import sin .js) detectado y reportado — corresponde a tarea M01-010 o anterior, fuera del scope de esta tarea.
+
+### M01-012 — Crear root layout con metadatos base y estructura HTML
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: ninguno
+  - Modificados: `src/app/layout.tsx`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (aprobó a la primera)
+- **Commit:** `feat(M01-012): create root layout with base metadata and HTML structure`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Se creó el Server Component `RootLayout` como default export. Se incluyeron fuentes `Inter` y `Space_Grotesk` con las variables y subsets indicados. Se configuró metadatos con el título y description correctas, el viewport themeColor en rojo oscuro, y body con las configuraciones CSS globales sin imports locales adicionales.
+
