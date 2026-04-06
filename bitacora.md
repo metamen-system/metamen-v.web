@@ -142,3 +142,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Placeholder global de carga implementado como Server Component con `role="status"`, `sr-only`, fondo `#0A0A0A` e indicador `48x48` con `animate-pulse` y fondo `#1A1A1A`.
 
+### M01-017 — Crear layout del grupo de rutas auth
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/(auth)/layout.tsx`
+  - Modificados: ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** REAUDITORÍA CICLO 1 (ajuste de scope)
+- **Commit:** `feat(M01-017): create auth route group layout`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Se creó el layout del route group `(auth)` como Server Component con contenedor centrado y ancho máximo de 420px, sin navegación ni wrappers adicionales.
+
