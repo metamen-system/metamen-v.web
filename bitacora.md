@@ -12,8 +12,8 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-012` — Crear root layout con metadatos base y estructura HTML |
-| Próxima tarea           | `M01-013` — (pendiente de definición)                           |
+| Última tarea completada | `M01-020` — Crear página placeholder de recuperación de contraseña |
+| Próxima tarea           | `M01-021` — (pendiente de definición)                           |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | tooling/M01-quality-ci                                   |
@@ -55,129 +55,26 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 12 tareas completadas.
+* **Total actual**: 20 tareas completadas.
 
-### BLOQUE M01-001 a M01-010 (RESUMEN CONSOLIDADO)
-* **Rango**: `M01-001` → `M01-010`
+### BLOQUE M01-001 a M01-020 (RESUMEN CONSOLIDADO)
+* **Rango**: `M01-001` → `M01-020`
 * **Estado global**: ✅ COMPLETADO / APROBADO
-* **Corte**: 2026-04-05
-* **Resumen**:
-  - `M01-001` Repositorio GitHub creado
-  - `M01-002` Inicialización Next.js 15 App Router
-  - `M01-003` Configuración `.npmrc` para pnpm estricto
-  - `M01-004` `engines` + `packageManager` en `package.json`
-  - `M01-005` `pnpm-workspace.yaml` mínimo funcional
-  - `M01-006` Dependencias de producción (estado/validación/fechas)
-  - `M01-007` Dependencias de producción (servicios e integraciones)
-  - `M01-008` Dependencias de producción (UI y utilidades)
-  - `M01-009` Dependencias de desarrollo (testing)
-  - `M01-010` Dependencias de desarrollo (linting y formateo)
+* **Corte**: 2026-04-06
+* **Módulo**: 01 — Infraestructura & Fundación del Proyecto
+* **Aprobación auditoría**: 100% en todas las tareas del bloque
+* **Resumen de entregables**:
+  - Base del repositorio y setup de Next.js 15 + pnpm estricto (`M01-001` a `M01-005`).
+  - Dependencias productivas/dev y calidad inicial del workspace (`M01-006` a `M01-010`).
+  - Configuración TypeScript strict (`M01-011`).
+  - Estructura raíz App Router (layout/not-found/error/loading) (`M01-012`, `M01-014`, `M01-015`, `M01-016`).
+  - Route group de autenticación `(auth)` y placeholders finales de auth:
+    - `src/app/(auth)/layout.tsx` (`M01-017`)
+    - `src/app/(auth)/login/page.tsx` (`M01-018`)
+    - `src/app/(auth)/register/page.tsx` (`M01-019`)
+    - `src/app/(auth)/forgot-password/page.tsx` (`M01-020`)
+* **Rama principal usada en tareas de routing/auth**: `feat/M01-routing-pages`
 * **Notas**:
-  - Se aceptó excepción técnica de `pnpm-workspace.yaml` por integridad de workspace pnpm.
-  - Se mantiene `recharts` fuera por conflicto SSOT/documentación y política vigente.
-  - Auditorías de cierre de los ciclos recientes: 100%.
-
-### M01-011 — Configurar tsconfig.json con modo estricto completo
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: ninguno
-  - Modificados: `tsconfig.json`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (aprobó a la primera)
-- **Commit:** `config(M01-011): configure tsconfig.json with full strict mode`
-- **Rama:** `setup/M01-base-infrastructure`
-- **Notas:** target ES2022, strict completo explícito (10 flags), noUncheckedIndexedAccess, exactOptionalPropertyTypes, path alias @/* → ./src/* con baseUrl ".". pnpm tsc --noEmit → EXIT:0 sin errores. Bug pre-existente en eslint.config.mjs (import sin .js) detectado y reportado — corresponde a tarea M01-010 o anterior, fuera del scope de esta tarea.
-
-### M01-012 — Crear root layout con metadatos base y estructura HTML
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: ninguno
-  - Modificados: `src/app/layout.tsx`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (aprobó a la primera)
-- **Commit:** `feat(M01-012): create root layout with base metadata and HTML structure`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Se creó el Server Component `RootLayout` como default export. Se incluyeron fuentes `Inter` y `Space_Grotesk` con las variables y subsets indicados. Se configuró metadatos con el título y description correctas, el viewport themeColor en rojo oscuro, y body con las configuraciones CSS globales sin imports locales adicionales.
-
-### M01-014 — Crear global error boundary
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/error.tsx`
-  - Modificados: ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (aprobó a la primera)
-- **Commit:** `feat(M01-014): add global error boundary with reset functionality`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Implementado error boundary global como Client Component con `useEffect` para `console.error(error)`, visual con tokens SSOT y botón `Reintentar` que ejecuta `reset()`.
-
-### M01-015 — Crear página not-found global
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/not-found.tsx`
-  - Modificados: ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (aprobó a la primera)
-- **Commit:** `feat(M01-015): add global not-found page with 404 UI`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Página 404 global implementada en `src/app/not-found.tsx` como Server Component con fondo `#0A0A0A`, título `404` en `#FF073A`, subtítulo en `#B0B0B0` y link `Volver al inicio` en `#D4AF37`.
-
-### M01-016 — Crear loading global placeholder
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/loading.tsx`
-  - Modificados: ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (aprobó a la primera)
-- **Commit:** `feat(M01-016): add global loading placeholder with pulse animation`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Placeholder global de carga implementado como Server Component con `role="status"`, `sr-only`, fondo `#0A0A0A` e indicador `48x48` con `animate-pulse` y fondo `#1A1A1A`.
-
-### M01-017 — Crear layout del grupo de rutas auth
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/(auth)/layout.tsx`
-  - Modificados: ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** REAUDITORÍA CICLO 1 (ajuste de scope)
-- **Commit:** `feat(M01-017): create auth route group layout`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Se creó el layout del route group `(auth)` como Server Component con contenedor centrado y ancho máximo de 420px, sin navegación ni wrappers adicionales.
-
-### M01-018 — Crear página placeholder de login
-- **Fecha:** 2026-04-05 18:58
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/(auth)/login/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-018): add login placeholder page`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Página `/login` placeholder implementada como Server Component dentro del route group `(auth)`, con card `#1A1A1A`, título en `#FFFFFF`, subtítulo en `#B0B0B0` y mensaje de implementación en M04.
-
-### M01-019 — Crear página placeholder de registro
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/(auth)/register/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-019): add register placeholder page`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Placeholder de `/register` implementado como Server Component con card `#1A1A1A`, título "Inicia el Protocolo", subtítulo "100 días. Sin excusas." y texto de implementación para M04.
+  - Se consolidó el historial `M01-001` a `M01-020` en un solo bloque para mantener `bitacora.md` ligero.
+  - Se mantiene deuda técnica abierta `DT-001` para `eslint.config.mjs` (asignada a `M01-085`).
 
