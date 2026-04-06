@@ -12,8 +12,8 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-023` — Crear página placeholder del dashboard |
-| Próxima tarea           | `M01-024` — (pendiente de definición)                           |
+| Última tarea completada | `M01-024` — Crear página placeholder de tareas del dashboard |
+| Próxima tarea           | `M01-025` — (pendiente de definición)                           |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | feat/M01-routing-pages                                   |
@@ -29,7 +29,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [██░░░░░░░░] 23/110  ← EN CURSO
+M01: Infraestructura             [██░░░░░░░░] 24/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -55,7 +55,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 23 tareas completadas.
+* **Total actual**: 24 tareas completadas.
 
 ### BLOQUE M01-001 a M01-020 (RESUMEN CONSOLIDADO)
 * **Rango**: `M01-001` → `M01-020`
@@ -116,4 +116,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M01-022): add dashboard route layout and placeholder page`
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Implementada junto con la corrección arquitectónica de M01-022 para habilitar la ruta `/dashboard`.
+
+## [M01-024] — Crear página placeholder de tareas del dashboard
+- **Fecha:** 2026-04-05
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/dashboard/tasks/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-024): add tasks placeholder page for dashboard`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
 
