@@ -155,3 +155,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Se creó el layout del route group `(auth)` como Server Component con contenedor centrado y ancho máximo de 420px, sin navegación ni wrappers adicionales.
 
+### M01-018 — Crear página placeholder de login
+- **Fecha:** 2026-04-05 18:58
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/(auth)/login/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-018): add login placeholder page`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Página `/login` placeholder implementada como Server Component dentro del route group `(auth)`, con card `#1A1A1A`, título en `#FFFFFF`, subtítulo en `#B0B0B0` y mensaje de implementación en M04.
+
