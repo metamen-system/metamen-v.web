@@ -12,11 +12,11 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-020` — Crear página placeholder de recuperación de contraseña |
-| Próxima tarea           | `M01-021` — (pendiente de definición)                           |
+| Última tarea completada | `M01-023` — Crear página placeholder del dashboard |
+| Próxima tarea           | `M01-024` — (pendiente de definición)                           |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
-| Branch                  | tooling/M01-quality-ci                                   |
+| Branch                  | feat/M01-routing-pages                                   |
 
 ## DEUDA TÉCNICA PENDIENTE
 
@@ -29,7 +29,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [██░░░░░░░░] 20/110  ← EN CURSO
+M01: Infraestructura             [██░░░░░░░░] 23/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -55,7 +55,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 21 tareas completadas.
+* **Total actual**: 23 tareas completadas.
 
 ### BLOQUE M01-001 a M01-020 (RESUMEN CONSOLIDADO)
 * **Rango**: `M01-001` → `M01-020`
@@ -90,4 +90,30 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M01-021): create auth callback route handler placeholder`
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Ninguna
+
+## [M01-022] — Crear layout del grupo de rutas dashboard
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/dashboard/layout.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 2)
+- **Commit:** `feat(M01-022): add dashboard route layout and placeholder page`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Directorio renombrado de `(dashboard)` a `dashboard` para generar la URL real `/dashboard` según los criterios de M01-022 a M01-027.
+
+## [M01-023] — Crear página placeholder del dashboard
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/dashboard/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 2)
+- **Commit:** `feat(M01-022): add dashboard route layout and placeholder page`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Implementada junto con la corrección arquitectónica de M01-022 para habilitar la ruta `/dashboard`.
 
