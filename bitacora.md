@@ -29,7 +29,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [█░░░░░░░░░] 10/110  ← EN CURSO
+M01: Infraestructura             [██░░░░░░░░] 20/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -55,7 +55,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 20 tareas completadas.
+* **Total actual**: 21 tareas completadas.
 
 ### BLOQUE M01-001 a M01-020 (RESUMEN CONSOLIDADO)
 * **Rango**: `M01-001` → `M01-020`
@@ -77,4 +77,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 * **Notas**:
   - Se consolidó el historial `M01-001` a `M01-020` en un solo bloque para mantener `bitacora.md` ligero.
   - Se mantiene deuda técnica abierta `DT-001` para `eslint.config.mjs` (asignada a `M01-085`).
+
+## [M01-021] — Crear auth callback route handler placeholder
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/auth/callback/route.ts`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-021): create auth callback route handler placeholder`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
 
