@@ -12,8 +12,8 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-002` — Inicializar proyecto Next.js 15 con App Router |
-| Próxima tarea           | `M01-003` — Configurar TypeScript strict mode           |
+| Última tarea completada | `M01-011` — Configurar tsconfig.json con modo estricto completo |
+| Próxima tarea           | `M01-012` — Crear root layout con metadatos base y estructura HTML |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | setup/M01-base-infrastructure                            |
@@ -21,7 +21,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [██░░░░░░░░] 2/110  ← EN CURSO
+M01: Infraestructura             [███░░░░░░░] 3/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -47,7 +47,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 2 tareas completadas.
+* **Total actual**: 3 tareas completadas.
 
 ### [M01-001] — Crear repositorio GitHub para METAMEN100
 * **Estado**: ✅ COMPLETADA
@@ -65,3 +65,12 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 * **Ciclos de corrección**: 1
 * **Rama**: `setup/M01-base-infrastructure`
 * **Commit**: `chore(M01-002): initialize Next.js 15 project with App Router`
+
+### [M01-011] — Configurar tsconfig.json con modo estricto completo
+* **Estado**: ✅ APROBADA (100%)
+* **Fecha**: 2026-04-05
+* **Score auditoría**: 100%
+* **Tipo de aprobación**: REAUDITORÍA CICLO 2
+* **Archivos**: tsconfig.json, eslint.config.mjs
+* **Rama**: `setup/M01-base-infrastructure`
+* **Commit**: `config(M01-011): configure tsconfig.json strict mode and fix ESLint 9 flat config`
