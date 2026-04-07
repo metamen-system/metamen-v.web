@@ -101,3 +101,80 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** feat/M01-routing-pages
 
+## [M01-041, M01-042] — Crear árbol de directorios src/lib/core + barrel export
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP | CODE
+- **Score auditoría:** 100% (reauditoría ciclo 1)
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: src/lib/core/index.ts, src/lib/core/types/index.ts, src/lib/core/vectors/index.ts, src/lib/core/economy/index.ts, src/lib/core/health/index.ts, src/lib/core/levels/index.ts, src/lib/core/avatar/index.ts, src/lib/core/judgement/index.ts, src/lib/core/tasks/index.ts, src/lib/core/validation/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-043, M01-044, M01-045] — Crear directorios placeholder src/lib/supabase, src/lib/auth, src/lib/storage
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/lib/supabase/client.ts, src/lib/supabase/server.ts, src/lib/supabase/middleware.ts, src/lib/auth/index.ts, src/lib/storage/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-046, M01-047, M01-048, M01-049, M01-050] — Crear directorios placeholder avatar, stripe, inngest, security, analytics
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/lib/avatar/index.ts, src/lib/stripe/client.ts, src/lib/stripe/server.ts, src/lib/inngest/client.ts, src/lib/inngest/functions/.gitkeep, src/lib/security/index.ts, src/lib/analytics/index.ts, src/lib/analytics/events.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-051, M01-052, M01-053, M01-054, M01-055] — Crear directorios placeholder notifications, validation, queries, animations + components base
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/lib/notifications/index.ts, src/lib/validation/index.ts, src/lib/queries/index.ts, src/lib/queries/keys.ts, src/lib/animations/index.ts, src/components/ui/.gitkeep, src/components/layout/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-056, M01-057, M01-058] — Crear directorios de componentes — core gameplay, features, user lifecycle
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/components/avatar/.gitkeep, src/components/dashboard/.gitkeep, src/components/judgement/.gitkeep, src/components/tasks/.gitkeep, src/components/tools/.gitkeep, src/components/store/.gitkeep, src/components/inventory/.gitkeep, src/components/onboarding/.gitkeep, src/components/subscription/.gitkeep, src/components/profile/.gitkeep, src/components/notifications/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-059, M01-060, M01-061, M01-062] — Crear directorios hooks, stores, actions, providers
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/hooks/index.ts, src/hooks/queries/index.ts, src/stores/.gitkeep, src/actions/tasks/.gitkeep, src/actions/judgement/.gitkeep, src/actions/store/.gitkeep, src/actions/avatar/.gitkeep, src/actions/profile/.gitkeep, src/actions/inventory/.gitkeep, src/actions/tools/.gitkeep, src/actions/onboarding/.gitkeep, src/providers/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
+## [M01-063, M01-064, M01-065, M01-066, M01-067] — Crear estructura de directorios public/ para assets estaticos
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: public/sprites/archetypes/{1,2,3,4,5,6}/.gitkeep, public/backgrounds/fallback/.gitkeep, public/backgrounds/fallback/README.md, public/animations/.gitkeep, public/animations/README.md, public/audio/{meditations,binaurals,soundscapes,sfx}/.gitkeep, public/fonts/.gitkeep, public/images/exercises/.gitkeep, public/shaders/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
