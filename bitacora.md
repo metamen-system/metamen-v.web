@@ -245,3 +245,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: .gitignore
 - **Rama:** config/M01-security-pwa
 
+## [M01-074] — Crear .env.local con valores de desarrollo
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: .env.local (no trackeado)
+  - Modificados: .gitignore
+- **Rama:** config/M01-security-pwa
+
