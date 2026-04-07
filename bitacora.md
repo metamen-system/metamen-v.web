@@ -208,3 +208,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Ninguna
 
+## [M01-035] — Crear API health check route
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/api/health/route.ts`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-035): add API health check route`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
+
