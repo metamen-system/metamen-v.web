@@ -156,3 +156,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
 
+## [M01-059, M01-060, M01-061, M01-062] — Crear directorios hooks, stores, actions, providers
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/hooks/index.ts, src/hooks/queries/index.ts, src/stores/.gitkeep, src/actions/tasks/.gitkeep, src/actions/judgement/.gitkeep, src/actions/store/.gitkeep, src/actions/avatar/.gitkeep, src/actions/profile/.gitkeep, src/actions/inventory/.gitkeep, src/actions/tools/.gitkeep, src/actions/onboarding/.gitkeep, src/providers/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
