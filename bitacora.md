@@ -145,3 +145,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
 
+## [M01-056, M01-057, M01-058] — Crear directorios de componentes — core gameplay, features, user lifecycle
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/components/avatar/.gitkeep, src/components/dashboard/.gitkeep, src/components/judgement/.gitkeep, src/components/tasks/.gitkeep, src/components/tools/.gitkeep, src/components/store/.gitkeep, src/components/inventory/.gitkeep, src/components/onboarding/.gitkeep, src/components/subscription/.gitkeep, src/components/profile/.gitkeep, src/components/notifications/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
