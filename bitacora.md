@@ -143,3 +143,68 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** `feat/M01-routing-pages`
 - **Notas:** Ninguna
 
+## [M01-026] — Crear página placeholder de tienda del dashboard
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/dashboard/store/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
+
+## [M01-027] — Crear página placeholder de perfil del dashboard
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/dashboard/profile/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
+
+## [M01-028] — Crear layout del grupo de rutas onboarding
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/onboarding/layout.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
+
+## [M01-029 | M01-030] — Crear placeholder onboarding Paso 1 (Selección de Personaje) y Paso 2 (Timezone)
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/onboarding/character/page.tsx`, `src/app/onboarding/timezone/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 1)
+- **Commit:** `fix(M01-029,M01-030): correct onboarding headings to match SSOT v1`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Headings corregidos de valores MODULO_01 a valores SSOT v1.
+
+## [M01-031 | M01-032 | M01-033 | M01-034] — Placeholders onboarding pasos 3-6 (vectors, penalty, oath, start)
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/app/onboarding/vectors/page.tsx`, `src/app/onboarding/penalty/page.tsx`, `src/app/onboarding/oath/page.tsx`, `src/app/onboarding/start/page.tsx`
+  - Modificados: `bitacora.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-031..034): add onboarding placeholder pages for steps 3-6`
+- **Rama:** `feat/M01-routing-pages`
+- **Notas:** Ninguna
+
