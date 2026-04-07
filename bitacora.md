@@ -256,3 +256,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: .gitignore
 - **Rama:** config/M01-security-pwa
 
+## [M01-075] — Crear next.config.ts con configuración base
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: next.config.ts, package.json, pnpm-lock.yaml
+- **Rama:** config/M01-security-pwa
+
