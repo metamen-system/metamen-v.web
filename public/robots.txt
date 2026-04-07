@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /onboarding/
+Disallow: /judgement/
+Sitemap: https://metamen100.com/sitemap.xml
