@@ -12,8 +12,8 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-025` — Crear página placeholder de herramientas del dashboard |
-| Próxima tarea           | `M01-026` — (pendiente de definición)                           |
+| Última tarea completada | `M01-035` — Crear API health check route                |
+| Próxima tarea           | `M01-036` — (pendiente de definición)                   |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | feat/M01-routing-pages                                   |
@@ -29,7 +29,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [██░░░░░░░░] 25/110  ← EN CURSO
+M01: Infraestructura             [███░░░░░░░] 35/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -55,169 +55,49 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 25 tareas completadas.
+* **Total actual**: 35 tareas completadas.
 
-### BLOQUE M01-001 a M01-020 (RESUMEN CONSOLIDADO)
-* **Rango**: `M01-001` → `M01-020`
+### BLOQUE M01-001 a M01-035 (RESUMEN CONSOLIDADO)
+* **Rango**: `M01-001` → `M01-035`
 * **Estado global**: ✅ COMPLETADO / APROBADO
 * **Corte**: 2026-04-06
 * **Módulo**: 01 — Infraestructura & Fundación del Proyecto
-* **Aprobación auditoría**: 100% en todas las tareas del bloque
+* **Aprobación auditoría**: 100% en todas las tareas del bloque (incluye reauditoría en `M01-029` y `M01-030`)
 * **Resumen de entregables**:
-  - Base del repositorio y setup de Next.js 15 + pnpm estricto (`M01-001` a `M01-005`).
-  - Dependencias productivas/dev y calidad inicial del workspace (`M01-006` a `M01-010`).
-  - Configuración TypeScript strict (`M01-011`).
-  - Estructura raíz App Router (layout/not-found/error/loading) (`M01-012`, `M01-014`, `M01-015`, `M01-016`).
-  - Route group de autenticación `(auth)` y placeholders finales de auth:
-    - `src/app/(auth)/layout.tsx` (`M01-017`)
-    - `src/app/(auth)/login/page.tsx` (`M01-018`)
-    - `src/app/(auth)/register/page.tsx` (`M01-019`)
-    - `src/app/(auth)/forgot-password/page.tsx` (`M01-020`)
-* **Rama principal usada en tareas de routing/auth**: `feat/M01-routing-pages`
+  - Base del repositorio, setup de Next.js 15 + pnpm estricto y configuración de calidad inicial (`M01-001` a `M01-011`).
+  - Estructura App Router base (root layout, not-found, error, loading) y flujo auth placeholder (`M01-012` a `M01-021`).
+  - Scaffolding de rutas dashboard con placeholders (`M01-022` a `M01-027`):
+    - `src/app/dashboard/layout.tsx`
+    - `src/app/dashboard/page.tsx`
+    - `src/app/dashboard/tasks/page.tsx`
+    - `src/app/dashboard/tools/page.tsx`
+    - `src/app/dashboard/store/page.tsx`
+    - `src/app/dashboard/profile/page.tsx`
+  - Scaffolding de onboarding pasos 1-6 con layout fullscreen (`M01-028` a `M01-034`):
+    - `src/app/onboarding/layout.tsx`
+    - `src/app/onboarding/character/page.tsx`
+    - `src/app/onboarding/timezone/page.tsx`
+    - `src/app/onboarding/vectors/page.tsx`
+    - `src/app/onboarding/penalty/page.tsx`
+    - `src/app/onboarding/oath/page.tsx`
+    - `src/app/onboarding/start/page.tsx`
+  - Primer API Route Handler del proyecto (`M01-035`):
+    - `src/app/api/health/route.ts`
+* **Rama principal usada**: `feat/M01-routing-pages`
 * **Notas**:
-  - Se consolidó el historial `M01-001` a `M01-020` en un solo bloque para mantener `bitacora.md` ligero.
+  - Se consolida el historial `M01-001` a `M01-035` en un solo bloque para mantener `bitacora.md` ligero.
   - Se mantiene deuda técnica abierta `DT-001` para `eslint.config.mjs` (asignada a `M01-085`).
 
-## [M01-021] — Crear auth callback route handler placeholder
+## [M01-036, M01-037, M01-038] — API Route Handlers Placeholder
 - **Fecha:** 2026-04-06
 - **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
+- **Tipo:** SETUP
+- **Tareas:** M01-036, M01-037, M01-038
+- **Títulos:** Crear directorio API webhooks/stripe con placeholder | Crear directorio API inngest con placeholder | Crear directorio API push con placeholder
+- **Score auditoría:** 100% (post-corrección ciclo 1)
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
 - **Archivos:**
-  - Creados: `src/app/auth/callback/route.ts`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-021): create auth callback route handler placeholder`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-022] — Crear layout del grupo de rutas dashboard
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/layout.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 2)
-- **Commit:** `feat(M01-022): add dashboard route layout and placeholder page`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Directorio renombrado de `(dashboard)` a `dashboard` para generar la URL real `/dashboard` según los criterios de M01-022 a M01-027.
-
-## [M01-023] — Crear página placeholder del dashboard
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 2)
-- **Commit:** `feat(M01-022): add dashboard route layout and placeholder page`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Implementada junto con la corrección arquitectónica de M01-022 para habilitar la ruta `/dashboard`.
-
-## [M01-024] — Crear página placeholder de tareas del dashboard
-- **Fecha:** 2026-04-05
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/tasks/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-024): add tasks placeholder page for dashboard`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-025] — Crear página placeholder de herramientas del dashboard
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/tools/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-025): create tools dashboard placeholder page`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-026] — Crear página placeholder de tienda del dashboard
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/store/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-027] — Crear página placeholder de perfil del dashboard
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/dashboard/profile/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-028] — Crear layout del grupo de rutas onboarding
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/onboarding/layout.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-026,M01-027,M01-028): add store, profile placeholders and onboarding layout`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-029 | M01-030] — Crear placeholder onboarding Paso 1 (Selección de Personaje) y Paso 2 (Timezone)
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/onboarding/character/page.tsx`, `src/app/onboarding/timezone/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 1)
-- **Commit:** `fix(M01-029,M01-030): correct onboarding headings to match SSOT v1`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Headings corregidos de valores MODULO_01 a valores SSOT v1.
-
-## [M01-031 | M01-032 | M01-033 | M01-034] — Placeholders onboarding pasos 3-6 (vectors, penalty, oath, start)
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/onboarding/vectors/page.tsx`, `src/app/onboarding/penalty/page.tsx`, `src/app/onboarding/oath/page.tsx`, `src/app/onboarding/start/page.tsx`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-031..034): add onboarding placeholder pages for steps 3-6`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
-
-## [M01-035] — Crear API health check route
-- **Fecha:** 2026-04-06
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/app/api/health/route.ts`
-  - Modificados: `bitacora.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-035): add API health check route`
-- **Rama:** `feat/M01-routing-pages`
-- **Notas:** Ninguna
+  - Creados: src/app/api/webhooks/stripe/route.ts, src/app/api/inngest/route.ts, src/app/api/push/register/route.ts
+  - Modificados: Ninguno
+- **Rama:** feat/M01-routing-pages
 
