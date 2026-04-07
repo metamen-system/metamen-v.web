@@ -212,3 +212,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Eliminados: postcss.config.mjs
 - **Rama:** config/M01-security-pwa
 
+## [M01-071] — Crear tailwind.config.ts con estructura base
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: tailwind.config.ts
+  - Modificados: Ninguno
+- **Rama:** config/M01-security-pwa
+
