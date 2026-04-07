@@ -167,3 +167,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
 
+## [M01-063, M01-064, M01-065, M01-066, M01-067] — Crear estructura de directorios public/ para assets estaticos
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: public/sprites/archetypes/{1,2,3,4,5,6}/.gitkeep, public/backgrounds/fallback/.gitkeep, public/backgrounds/fallback/README.md, public/animations/.gitkeep, public/animations/README.md, public/audio/{meditations,binaurals,soundscapes,sfx}/.gitkeep, public/fonts/.gitkeep, public/images/exercises/.gitkeep, public/shaders/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
