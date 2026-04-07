@@ -134,3 +134,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
 
+## [M01-051, M01-052, M01-053, M01-054, M01-055] — Crear directorios placeholder notifications, validation, queries, animations + components base
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/lib/notifications/index.ts, src/lib/validation/index.ts, src/lib/queries/index.ts, src/lib/queries/keys.ts, src/lib/animations/index.ts, src/components/ui/.gitkeep, src/components/layout/.gitkeep
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
