@@ -101,3 +101,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** feat/M01-routing-pages
 
+## [M01-041, M01-042] — Crear árbol de directorios src/lib/core + barrel export
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP | CODE
+- **Score auditoría:** 100% (reauditoría ciclo 1)
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: src/lib/core/index.ts, src/lib/core/types/index.ts, src/lib/core/vectors/index.ts, src/lib/core/economy/index.ts, src/lib/core/health/index.ts, src/lib/core/levels/index.ts, src/lib/core/avatar/index.ts, src/lib/core/judgement/index.ts, src/lib/core/tasks/index.ts, src/lib/core/validation/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
