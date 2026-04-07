@@ -12,11 +12,11 @@
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-035` — Crear API health check route                |
-| Próxima tarea           | `M01-036` — (pendiente de definición)                   |
+| Última tarea completada | `M01-068` — Crear robots.txt                            |
+| Próxima tarea           | `M01-069` — Pendiente                                   |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
-| Branch                  | feat/M01-routing-pages                                   |
+| Branch                  | config/M01-security-pwa                                  |
 
 ## DEUDA TÉCNICA PENDIENTE
 
@@ -29,7 +29,7 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [███░░░░░░░] 35/110  ← EN CURSO
+M01: Infraestructura             [██████░░░░] 68/110  ← EN CURSO
 M02: Design System               [░░░░░░░░░░] 0/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
@@ -55,7 +55,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-* **Total actual**: 35 tareas completadas.
+* **Total actual**: 68 tareas completadas.
 
 ### BLOQUE M01-001 a M01-035 (RESUMEN CONSOLIDADO)
 * **Rango**: `M01-001` → `M01-035`
@@ -177,4 +177,15 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Creados: public/sprites/archetypes/{1,2,3,4,5,6}/.gitkeep, public/backgrounds/fallback/.gitkeep, public/backgrounds/fallback/README.md, public/animations/.gitkeep, public/animations/README.md, public/audio/{meditations,binaurals,soundscapes,sfx}/.gitkeep, public/fonts/.gitkeep, public/images/exercises/.gitkeep, public/shaders/.gitkeep
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
+
+## [M01-068] — Crear robots.txt
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: public/robots.txt
+  - Modificados: bitacora.md
+- **Rama:** config/M01-security-pwa
 
