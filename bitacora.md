@@ -234,3 +234,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: src/app/globals.css
 - **Rama:** config/M01-security-pwa
 
+## [M01-073] — Crear env.mjs con validación Zod de variables de entorno
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: src/lib/env.mjs, .env.example
+  - Modificados: .gitignore
+- **Rama:** config/M01-security-pwa
+
