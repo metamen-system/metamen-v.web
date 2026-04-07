@@ -6,14 +6,15 @@
 # Todo agente DEBE actualizarlo después de cada tarea completada.
 # ══════════════════════════════════════════════════════════════
 
+
 ## ESTADO GENERAL
 
 | Campo                   | Valor                                                    |
 | ----------------------- | -------------------------------------------------------- |
 | Fase actual             | Infraestructura inicial                                  |
 | Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto**        |
-| Última tarea completada | `M01-068` — Crear robots.txt                            |
-| Próxima tarea           | `M01-069` — Pendiente                                   |
+| Última tarea completada | `M01-076` — Agregar security headers a next.config.ts   |
+| Próxima tarea           | `M01-077` — Agregar Content-Security-Policy header      |
 | Bloqueadores            | Ninguno                                                  |
 | Fecha inicio proyecto   | 2026-02-21                                               |
 | Branch                  | config/M01-security-pwa                                  |
@@ -266,4 +267,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Creados: Ninguno
   - Modificados: next.config.ts, package.json, pnpm-lock.yaml
 - **Rama:** config/M01-security-pwa
+
+## [M01-076] — Agregar security headers a next.config.ts
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: next.config.ts
+- **Rama:** config/M01-security-pwa
+- **Notas:** 6 security headers (HSTS, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) aplicados a source '/(.*)', verificados via curl. Sin CSP (reservado para M01-077). Archivo real es next.config.ts (no .js como nombra el prompt).
+
 
