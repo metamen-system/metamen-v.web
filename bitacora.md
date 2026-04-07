@@ -223,3 +223,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** config/M01-security-pwa
 
+## [M01-072] — Crear globals.css con directivas Tailwind
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/app/globals.css
+- **Rama:** config/M01-security-pwa
+
