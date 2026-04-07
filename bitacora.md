@@ -189,3 +189,26 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: bitacora.md
 - **Rama:** config/M01-security-pwa
 
+## [M01-069] — Crear sitemap.xml
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: public/sitemap.xml
+  - Modificados: Ninguno
+- **Rama:** config/M01-security-pwa
+
+## [M01-070] — Normalizar configuración PostCSS a CommonJS
+- **Fecha:** 2026-04-06
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: postcss.config.js
+  - Modificados: .gitignore, src/app/layout.tsx
+  - Eliminados: postcss.config.mjs
+- **Rama:** config/M01-security-pwa
+
