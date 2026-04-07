@@ -112,3 +112,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** setup/M01-architecture-folders
 
+## [M01-043, M01-044, M01-045] — Crear directorios placeholder src/lib/supabase, src/lib/auth, src/lib/storage
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** PRIMERA AUDITORÍA
+- **Archivos:**
+  - Creados: src/lib/supabase/client.ts, src/lib/supabase/server.ts, src/lib/supabase/middleware.ts, src/lib/auth/index.ts, src/lib/storage/index.ts
+  - Modificados: Ninguno
+- **Rama:** setup/M01-architecture-folders
+
