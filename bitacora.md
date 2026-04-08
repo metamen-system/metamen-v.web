@@ -315,3 +315,12 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: src/middleware.ts
 - **Rama:** config/M01-security-pwa
 
+## [M01-086] — Crear configuración de Prettier
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: .prettierrc, .prettierignore
+  - Modificados: Ninguno
+- **Rama:** tooling/M01-quality-ci
+
