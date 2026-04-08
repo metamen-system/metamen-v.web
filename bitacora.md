@@ -280,4 +280,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama:** config/M01-security-pwa
 - **Notas:** 6 security headers (HSTS, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) aplicados a source '/(.*)', verificados via curl. Sin CSP (reservado para M01-077). Archivo real es next.config.ts (no .js como nombra el prompt).
 
+## [M01-081, M01-082] — Service Worker placeholder y registro en root layout
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Tareas:** M01-081, M01-082
+- **Títulos:** Crear Service Worker placeholder | Registrar Service Worker en root layout
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: public/sw.js, src/components/ServiceWorkerRegistration.tsx
+  - Modificados: src/app/layout.tsx
+- **Rama:** config/M01-security-pwa
 
