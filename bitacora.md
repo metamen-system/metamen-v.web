@@ -293,3 +293,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: src/app/layout.tsx
 - **Rama:** config/M01-security-pwa
 
+## [M01-083] — Crear middleware.ts con constantes de rutas
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: src/middleware.ts
+  - Modificados: Ninguno
+- **Rama:** config/M01-security-pwa
+
