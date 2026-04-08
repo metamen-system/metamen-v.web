@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    name: Quality Checks
+    runs-on: ubuntu-latest
+    env:
+      # Variables de entorno dummy para que next build pase validacion Zod
+      # Client-safe (NEXT_PUBLIC_*)
+      NEXT_PUBLIC_SUPABASE_URL: "https://placeholder.supabase.co"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "placeholder-anon-key"
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "pk_test_placeholder"
+      NEXT_PUBLIC_SENTRY_DSN: "https://placeholder@sentry.io/0"
+      NEXT_PUBLIC_POSTHOG_KEY: "phc_placeholder"
+      NEXT_PUBLIC_VAPID_PUBLIC_KEY: "placeholder-vapid-public"
+      NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+
+      # Server-only
+      SUPABASE_SERVICE_ROLE_KEY: "placeholder-service-role"
+      STRIPE_SECRET_KEY: "sk_test_placeholder"
+      STRIPE_WEBHOOK_SECRET: "whsec_placeholder"
+      GEMINI_API_KEY: "placeholder-gemini"
+      STABILITY_AI_KEY: "placeholder-stability"
+      INNGEST_SIGNING_KEY: "placeholder-inngest-signing"
+      INNGEST_EVENT_KEY: "placeholder-inngest-event"
+      VAPID_PRIVATE_KEY: "placeholder-vapid-private"
+      DATABASE_URL: "postgresql://placeholder:placeholder@localhost:5432/placeholder"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: TypeScript check
+        run: pnpm typecheck
+
+      - name: ESLint
+        run: pnpm lint
+
+      - name: Prettier format check
+        run: pnpm format:check
+
+      - name: Run tests
+        run: pnpm test:run
+
+      - name: Build
+        run: pnpm build
