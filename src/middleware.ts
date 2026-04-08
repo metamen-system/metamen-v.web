@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 const PUBLIC_ROUTES: readonly string[] = [
   '/',
@@ -18,7 +18,17 @@ const API_ROUTES: readonly string[] = [
 const STATIC_FILE_REGEX =
   /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|css|js|map)$/;
 
-export function middleware(request: NextRequest): NextResponse {
+async function getSession(
+  request: NextRequest
+): Promise<{ user: Record<string, unknown>; profile: Record<string, unknown> } | null> {
+  void request;
+
+  // TODO M04: Implement real session verification with Supabase Auth.
+  // This must read HttpOnly cookies, validate the JWT, and return user + profile.
+  return null;
+}
+
+export async function middleware(request: NextRequest): Promise<NextResponse> {
   const { pathname } = request.nextUrl;
 
   // Pass through static file requests.
@@ -36,8 +46,48 @@ export function middleware(request: NextRequest): NextResponse {
     return NextResponse.next();
   }
 
-  // TODO M04: Auth guards (getSession, onboarding, subscription, death)
-  // For now, all routes pass through without redirects.
+  // Get session (stub - always null until M04).
+  const session = await getSession(request);
+  void session;
+
+  // ===========================================
+  // GUARD 1 - Auth: Unauthenticated user
+  // ===========================================
+
+  // TODO M04: Implement real logic.
+  // if (!session) {
+  //   const loginUrl = new URL('/login', request.url);
+  //   loginUrl.searchParams.set('redirectTo', pathname);
+  //   return NextResponse.redirect(loginUrl);
+  // }
+
+  // ===========================================
+  // GUARD 2 - Incomplete onboarding
+  // ===========================================
+
+  // TODO M04: Implement real logic.
+  // if (!session.profile.onboarding_completed && !pathname.startsWith('/onboarding')) {
+  //   return NextResponse.redirect(new URL('/onboarding/character', request.url));
+  // }
+
+  // ===========================================
+  // GUARD 3 - Completed onboarding on /onboarding/*
+  // ===========================================
+
+  // TODO M04: Implement real logic.
+  // if (session.profile.onboarding_completed && pathname.startsWith('/onboarding')) {
+  //   return NextResponse.redirect(new URL('/dashboard', request.url));
+  // }
+
+  // ===========================================
+  // GUARD 4 - Account status DEAD
+  // ===========================================
+
+  // TODO M04: Implement real logic.
+  // if (session.profile.account_status === 'DEAD' && !pathname.startsWith('/judgement')) {
+  //   return NextResponse.redirect(new URL('/judgement?mode=death', request.url));
+  // }
+
   return NextResponse.next();
 }
 

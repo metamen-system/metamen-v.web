@@ -304,3 +304,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** config/M01-security-pwa
 
+## [M01-084] — Agregar esqueleto de guards al middleware
+- **Fecha:** 2026-04-07
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/middleware.ts
+- **Rama:** config/M01-security-pwa
+
