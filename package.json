@@ -11,8 +11,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "prepare": "husky"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "clean": "rm -rf .next node_modules"
   },
   "dependencies": {
     "@react-three/fiber": "^8.15.0",
