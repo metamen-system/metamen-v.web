@@ -324,3 +324,12 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Modificados: Ninguno
 - **Rama:** tooling/M01-quality-ci
 
+## M01-087 | M01-088
+- Título: Crear .editorconfig | Inicializar Husky y crear pre-commit hook
+- Fecha completación: 2026-04-08
+- Score auditoría: 100% (git index 100755 verificado)
+- Tipo de aprobación: REAUDITORÍA CICLO 3 — falso negativo test -x en entorno Windows/NTFS
+- Archivos: .editorconfig, .husky/pre-commit, package.json
+- Rama: tooling/M01-quality-ci
+- Nota: .husky/_/husky.sh gitignored por diseño Husky 9 (no es error)
+
