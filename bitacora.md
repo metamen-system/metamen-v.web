@@ -370,3 +370,12 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - Tipo de aprobación: PRIMERA AUDITORÍA
 - Archivos: package.json
 - Rama: tooling/M01-quality-ci
+
+## M01-090
+
+- Título: Agregar scripts npm al package.json
+- Fecha completación: 2026-04-08
+- Score auditoría: 100%
+- Tipo de aprobación: REAUDITORÍA CICLO 1
+- Archivos: package.json
+- Rama: tooling/M01-quality-ci
