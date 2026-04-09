@@ -140,3 +140,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `config(M01-097,M01-098): add vitest and playwright base configurations`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** `workers` usa spread condicional por incompatibilidad entre `exactOptionalPropertyTypes` y la sintaxis literal de la acción original.
+
+## [M01-099] — Crear tests directory structure
+
+- **Fecha:** 2026-04-08
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-099): create tests directory structure with unit, property-based, integration dirs and factories stub`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Ninguna
