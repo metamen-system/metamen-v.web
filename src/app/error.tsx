@@ -15,9 +15,7 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#0A0A0A] px-4">
       <div className="w-full max-w-xl text-center">
-        <h1 className="text-2xl font-semibold text-[#FF0000]">
-          Error inesperado
-        </h1>
+        <h1 className="text-2xl font-semibold text-[#FF0000]">Error inesperado</h1>
         <p className="mt-4 text-base text-[#B0B0B0]">{error.message}</p>
         <button
           type="button"

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Perfil | METAMEN100",
+  title: 'Perfil | METAMEN100',
 };
 
 export default function ProfilePage() {

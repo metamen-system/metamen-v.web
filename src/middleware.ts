@@ -9,17 +9,12 @@ const PUBLIC_ROUTES: readonly string[] = [
   '/verify-email',
 ] as const;
 
-const API_ROUTES: readonly string[] = [
-  '/api/webhooks',
-  '/api/inngest',
-  '/api/health',
-] as const;
+const API_ROUTES: readonly string[] = ['/api/webhooks', '/api/inngest', '/api/health'] as const;
 
-const STATIC_FILE_REGEX =
-  /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|css|js|map)$/;
+const STATIC_FILE_REGEX = /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|css|js|map)$/;
 
 async function getSession(
-  request: NextRequest
+  request: NextRequest,
 ): Promise<{ user: Record<string, unknown>; profile: Record<string, unknown> } | null> {
   void request;
 

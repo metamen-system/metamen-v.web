@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Arsenal | METAMEN100",
+  title: 'Arsenal | METAMEN100',
 };
 
 // TODO M11: Replace with full Arsenal tools grid (9 tools)

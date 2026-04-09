@@ -1,13 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-const requiredString = z
-  .string({ required_error: "Required" })
-  .min(1, "Required");
+const requiredString = z.string({ required_error: 'Required' }).min(1, 'Required');
 
-const requiredUrl = z
-  .string({ required_error: "Required" })
-  .min(1, "Required")
-  .url("Invalid url");
+const requiredUrl = z.string({ required_error: 'Required' }).min(1, 'Required').url('Invalid url');
 
 const serverSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: requiredString,
@@ -30,31 +25,27 @@ const clientSchema = z.object({
   NEXT_PUBLIC_APP_URL: requiredUrl,
 });
 
-const isServer = typeof window === "undefined";
+const isServer = typeof window === 'undefined';
 
 const formatIssues = (issues) => {
   const fieldErrors = new Map();
 
   for (const issue of issues) {
-    const key = issue.path.join(".");
+    const key = issue.path.join('.');
 
     if (!fieldErrors.has(key)) {
       fieldErrors.set(key, issue.message);
     }
   }
 
-  return [...fieldErrors.entries()]
-    .map(([key, message]) => `${key}: ${message}`)
-    .join("\n");
+  return [...fieldErrors.entries()].map(([key, message]) => `${key}: ${message}`).join('\n');
 };
 
 const parseOrThrow = (schema) => {
   const result = schema.safeParse(process.env);
 
   if (!result.success) {
-    throw new Error(
-      `❌ Invalid environment variables:\n\n${formatIssues(result.error.issues)}`,
-    );
+    throw new Error(`❌ Invalid environment variables:\n\n${formatIssues(result.error.issues)}`);
   }
 
   return result.data;
@@ -90,7 +81,7 @@ const env = {
   client: clientEnv,
   get server() {
     if (!isServer) {
-      throw new Error("❌ Server env vars accessed on client");
+      throw new Error('❌ Server env vars accessed on client');
     }
 
     return serverEnv;

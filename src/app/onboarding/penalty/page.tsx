@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "METAMEN100 — Declara tu Precio",
+  title: 'METAMEN100 — Declara tu Precio',
 };
 
 export default function PenaltyPage() {

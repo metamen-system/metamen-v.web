@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Tienda | METAMEN100",
+  title: 'Tienda | METAMEN100',
 };
 
 export default function StorePage() {

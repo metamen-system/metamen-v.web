@@ -1,8 +1,4 @@
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-[#0A0A0A]">
       {/* TODO M02: Integrate MainLayout with Sidebar, MobileHeader, BottomNav */}
