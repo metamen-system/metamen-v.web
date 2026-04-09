@@ -126,3 +126,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `ci(M01-091/092/093): add CI checks, preview deploy, and production release workflows`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** Ninguna
+
+## [M01-097 | M01-098] — Crear vitest.config.ts y playwright.config.ts con configuración base
+
+- **Fecha:** 2026-04-08
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: `vitest.config.ts`, `tests/setup.ts`, `playwright.config.ts`, `tests/e2e/.gitkeep`, `tests/e2e/placeholder.spec.ts`
+  - Modificados: `package.json`, `pnpm-lock.yaml`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 4 (REAUDITORÍA CICLO 4)
+- **Commit:** `config(M01-097,M01-098): add vitest and playwright base configurations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** `workers` usa spread condicional por incompatibilidad entre `exactOptionalPropertyTypes` y la sintaxis literal de la acción original.
