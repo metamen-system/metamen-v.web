@@ -154,3 +154,31 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M01-099): create tests directory structure with unit, property-based, integration dirs and factories stub`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** Ninguna
+
+## [M01-099] — Crear tests directory structure
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Aprobada en reauditoría junto con M01-100.
+
+## [M01-100] — Crear .gitignore completo
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `.gitignore`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** .gitignore normalizado a la spec exacta de M01-100.
