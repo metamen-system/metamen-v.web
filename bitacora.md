@@ -108,3 +108,23 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Tipo de aprobación**: REAUDITORÍA CICLO 1
 - **Archivos**: src/lib/utils.ts
 - **Rama**: config/M02-tailwind-tokens
+
+### M02-003 | M02-004 | M02-005 — Tokens de color (fondos + texto + accent-gold) en tailwind.config.ts
+
+- **Tarea**: M02-003 | M02-004 | M02-005
+- **Título**: Tokens de color (fondos + texto + accent-gold) en tailwind.config.ts
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: PRIMERA AUDITORÍA
+- **Archivos**: tailwind.config.ts
+- **Rama**: config/M02-tailwind-tokens
+
+### M02-006 | M02-007 | M02-008 — Tokens accent-cta + accent-active + estados semánticos en tailwind.config.ts
+
+- **Tareas**: M02-006, M02-007, M02-008
+- **Título**: Agregar tokens accent-cta + accent-active + estados semánticos a tailwind.config.ts
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: tailwind.config.ts
+- **Rama**: config/M02-tailwind-tokens
