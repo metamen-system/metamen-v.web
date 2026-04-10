@@ -50,6 +50,54 @@ pnpm dev
 
 El servidor estará disponible en http://localhost:3000
 
+## Developer Environment Setup
+
+### Prerequisites (one-time setup per machine)
+
+1. **Node.js 20** via fnm (Fast Node Manager):
+
+   ```bash
+   # Install fnm if not already installed
+   # https://github.com/Schniz/fnm#installation
+
+   # Install Node 20
+   fnm install 20
+   ```
+
+2. **fnm auto-switching** (activates correct Node version automatically):
+
+   **PowerShell** - Add to `$PROFILE`:
+
+   ```powershell
+   fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+   ```
+
+   **Bash/Zsh** - Add to `~/.bashrc` or `~/.zshrc`:
+
+   ```bash
+   eval "$(fnm env --use-on-cd)"
+   ```
+
+3. **pnpm >=9.0.0**:
+
+   ```bash
+   npm install -g pnpm@latest
+   ```
+
+### Environment auto-enforcement
+
+This project enforces its environment automatically:
+
+| Mechanism            | File           | Effect                                  |
+| -------------------- | -------------- | --------------------------------------- |
+| `.node-version`      | Root           | fnm activates Node 20 on `cd`           |
+| `engines`            | `package.json` | Declares required Node/pnpm versions    |
+| `engine-strict=true` | `.npmrc`       | pnpm refuses to run with wrong versions |
+| `"prepare": "husky"` | `package.json` | Husky hooks install on `pnpm install`   |
+
+> **No manual Node activation commands needed.** If `node --version` shows wrong
+> version after `cd` into the project, verify fnm auto-switching is configured.
+
 ## Scripts
 
 | Script          | Comando              | Descripción                     |
