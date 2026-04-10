@@ -251,3 +251,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `verify(M01-104,M01-105): production build and ESLint config verified`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** Build de producción y servidor validados con headers de seguridad SSOT; ESLint ejecuta sin errores de configuración.
+
+## [M01-106 | M01-107 | M01-108 | M01-109] — Verificaciones de env vars, security headers, manifest y rutas públicas
+
+- **Fecha:** 2026-04-10
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `src/middleware.ts`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 1)
+- **Commit:** `fix(M01-109): broaden API_ROUTES to cover entire /api/ namespace`
+- **Rama:** config/M01-security-pwa
+- **Notas:** Aprobación final tras Ciclo 1 de corrección. Se verificaron `src/lib/env.ts`, `next.config.ts`, `public/manifest.json`, `src/middleware.ts` y `src/app/api/health/route.ts`.
