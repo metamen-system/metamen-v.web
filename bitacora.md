@@ -126,3 +126,128 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `ci(M01-091/092/093): add CI checks, preview deploy, and production release workflows`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** Ninguna
+
+## [M01-097 | M01-098] — Crear vitest.config.ts y playwright.config.ts con configuración base
+
+- **Fecha:** 2026-04-08
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: `vitest.config.ts`, `tests/setup.ts`, `playwright.config.ts`, `tests/e2e/.gitkeep`, `tests/e2e/placeholder.spec.ts`
+  - Modificados: `package.json`, `pnpm-lock.yaml`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 4 (REAUDITORÍA CICLO 4)
+- **Commit:** `config(M01-097,M01-098): add vitest and playwright base configurations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** `workers` usa spread condicional por incompatibilidad entre `exactOptionalPropertyTypes` y la sintaxis literal de la acción original.
+
+## [M01-099] — Crear tests directory structure
+
+- **Fecha:** 2026-04-08
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M01-099): create tests directory structure with unit, property-based, integration dirs and factories stub`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Ninguna
+
+## [M01-099] — Crear tests directory structure
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Aprobada en reauditoría junto con M01-100.
+
+## [M01-100] — Crear .gitignore completo
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CONFIG
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `.gitignore`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** .gitignore normalizado a la spec exacta de M01-100.
+
+## [M01-101] — Crear README.md del proyecto
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** DOCS
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `README.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Badge de CI en formato Markdown renderizable agregado con URL real de GitHub Actions.
+
+## [M01-102] — Crear archivo de tipos globales del proyecto
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/types/global.d.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Se conservaron solo declaraciones no cubiertas por Next.js para evitar conflictos con `StaticImageData`.
+
+## HOTFIX-NODE-VERSION — Corrección versión Node
+
+- **Problema**: Entorno local ejecutaba Node `v24.14.0`, proyecto requiere Node 20.x
+- **Riesgo**: Incompatibilidad runtime local vs producción (Vercel Node 20)
+- **Solución**:
+  - Activado Node 20 via `fnm`
+  - Creado `.node-version` con valor `20`
+  - Confirmado `.nvmrc` con valor `20`
+  - Ajustado `engines.node` a `">=20.0.0 <21.0.0"` (bloqueo explícito)
+  - Verificado `engine-strict=true` en `.npmrc`
+  - Confirmado Node 20 en los 3 workflows de GitHub Actions
+- **Verificación**: `pnpm install`, `pnpm typecheck`, `pnpm lint` y `pnpm build` pasan con Node 20; `pnpm install` falla en Node 24 por `ERR_PNPM_UNSUPPORTED_ENGINE`
+
+## [M01-103] — Verificar compilación TypeScript estricta
+
+- **Fecha:** 2026-04-10
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `package.json`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 2)
+- **Commit:** `feat(M01-103): verify strict TypeScript compilation with zero errors`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** La restricción `engines.node "<21.0.0"` fue eliminada por no existir en SSOT; el requisito oficial queda en `>=20.0.0`.
+
+## [M01-104 | M01-105] — Verificar build de producción Next.js y ejecución de ESLint
+
+- **Fecha:** 2026-04-10
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: Ninguno (verificación de tooling)
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `verify(M01-104,M01-105): production build and ESLint config verified`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Build de producción y servidor validados con headers de seguridad SSOT; ESLint ejecuta sin errores de configuración.
