@@ -182,3 +182,44 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** .gitignore normalizado a la spec exacta de M01-100.
+
+## [M01-101] — Crear README.md del proyecto
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** DOCS
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `README.md`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Badge de CI en formato Markdown renderizable agregado con URL real de GitHub Actions.
+
+## [M01-102] — Crear archivo de tipos globales del proyecto
+
+- **Fecha:** 2026-04-09
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: `src/types/global.d.ts`
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Se conservaron solo declaraciones no cubiertas por Next.js para evitar conflictos con `StaticImageData`.
+
+## HOTFIX-NODE-VERSION — Corrección versión Node
+
+- **Problema**: Entorno local ejecutaba Node `v24.14.0`, proyecto requiere Node 20.x
+- **Riesgo**: Incompatibilidad runtime local vs producción (Vercel Node 20)
+- **Solución**:
+  - Activado Node 20 via `fnm`
+  - Creado `.node-version` con valor `20`
+  - Confirmado `.nvmrc` con valor `20`
+  - Ajustado `engines.node` a `">=20.0.0 <21.0.0"` (bloqueo explícito)
+  - Verificado `engine-strict=true` en `.npmrc`
+  - Confirmado Node 20 en los 3 workflows de GitHub Actions
+- **Verificación**: `pnpm install`, `pnpm typecheck`, `pnpm lint` y `pnpm build` pasan con Node 20; `pnpm install` falla en Node 24 por `ERR_PNPM_UNSUPPORTED_ENGINE`
