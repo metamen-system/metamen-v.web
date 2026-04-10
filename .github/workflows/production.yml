@@ -19,13 +19,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: "pnpm"
@@ -45,8 +45,13 @@ jobs:
       - name: Run E2E tests
         run: pnpm exec playwright test
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: "https://placeholder.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "placeholder-anon-key"
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "pk_test_placeholder"
+          NEXT_PUBLIC_SENTRY_DSN: "https://placeholder@sentry.io/0"
+          NEXT_PUBLIC_POSTHOG_KEY: "phc_placeholder"
+          NEXT_PUBLIC_VAPID_PUBLIC_KEY: "placeholder-vapid-public"
+          NEXT_PUBLIC_APP_URL: "http://localhost:3000"
 
       - name: Build with Vercel
         run: |

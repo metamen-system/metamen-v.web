@@ -317,3 +317,7 @@ server en build time. Client vars siguen validándose siempre.
 **Ajuste adicional:** Con `pnpm/action-setup@v4` se eliminó `with: version: 9`
 en los workflows para evitar conflicto con `packageManager: "pnpm@9.0.0"` y el
 error `Multiple versions of pnpm specified`.
+
+**Ajuste adicional 2:** Se actualizaron las actions a versiones con runtime Node 24
+(`actions/checkout@v6`, `actions/setup-node@v6`, `pnpm/action-setup@v5`) y se
+inyectaron `NEXT_PUBLIC_*` placeholders en el paso E2E de `production.yml`.
