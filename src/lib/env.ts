@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z, type ZodIssue, type ZodTypeAny } from 'zod';
 
 const requiredString = z.string({ required_error: 'Required' }).min(1, 'Required');
 
@@ -27,8 +27,10 @@ const clientSchema = z.object({
 
 const isServer = typeof window === 'undefined';
 
-const formatIssues = (issues) => {
-  const fieldErrors = new Map();
+type ParsedServerEnv = z.infer<typeof serverSchema>;
+
+const formatIssues = (issues: ZodIssue[]) => {
+  const fieldErrors = new Map<string, string>();
 
   for (const issue of issues) {
     const key = issue.path.join('.');
@@ -41,7 +43,7 @@ const formatIssues = (issues) => {
   return [...fieldErrors.entries()].map(([key, message]) => `${key}: ${message}`).join('\n');
 };
 
-const parseOrThrow = (schema) => {
+const parseOrThrow = <TSchema extends ZodTypeAny>(schema: TSchema): z.infer<TSchema> => {
   const result = schema.safeParse(process.env);
 
   if (!result.success) {
@@ -52,7 +54,7 @@ const parseOrThrow = (schema) => {
 };
 
 const parsedClient = parseOrThrow(clientSchema);
-const parsedServer = isServer ? parseOrThrow(serverSchema) : null;
+const parsedServer: ParsedServerEnv | null = isServer ? parseOrThrow(serverSchema) : null;
 
 const clientEnv = {
   supabaseUrl: parsedClient.NEXT_PUBLIC_SUPABASE_URL,
@@ -80,7 +82,7 @@ const serverEnv = parsedServer
 const env = {
   client: clientEnv,
   get server() {
-    if (!isServer) {
+    if (!isServer || !serverEnv) {
       throw new Error('❌ Server env vars accessed on client');
     }
 
