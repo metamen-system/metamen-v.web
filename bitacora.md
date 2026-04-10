@@ -237,3 +237,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M01-103): verify strict TypeScript compilation with zero errors`
 - **Rama:** tooling/M01-quality-ci
 - **Notas:** La restricción `engines.node "<21.0.0"` fue eliminada por no existir en SSOT; el requisito oficial queda en `>=20.0.0`.
+
+## [M01-104 | M01-105] — Verificar build de producción Next.js y ejecución de ESLint
+
+- **Fecha:** 2026-04-10
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: Ninguno (verificación de tooling)
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `verify(M01-104,M01-105): production build and ESLint config verified`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** Build de producción y servidor validados con headers de seguridad SSOT; ESLint ejecuta sin errores de configuración.
