@@ -26,6 +26,9 @@ const clientSchema = z.object({
 });
 
 const isServer = typeof window === 'undefined';
+const isBuildPhase =
+  process.env.NEXT_PHASE === 'phase-production-build' ||
+  (process.env.CI === 'true' && !process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 type ParsedServerEnv = z.infer<typeof serverSchema>;
 
@@ -53,8 +56,17 @@ const parseOrThrow = <TSchema extends ZodTypeAny>(schema: TSchema): z.infer<TSch
   return result.data;
 };
 
+const parseServerForBuild = (): ParsedServerEnv =>
+  Object.fromEntries(
+    Object.keys(serverSchema.shape).map((key) => [key, process.env[key] ?? '']),
+  ) as ParsedServerEnv;
+
 const parsedClient = parseOrThrow(clientSchema);
-const parsedServer: ParsedServerEnv | null = isServer ? parseOrThrow(serverSchema) : null;
+const parsedServer: ParsedServerEnv | null = isServer
+  ? isBuildPhase
+    ? parseServerForBuild()
+    : parseOrThrow(serverSchema)
+  : null;
 
 const clientEnv = {
   supabaseUrl: parsedClient.NEXT_PUBLIC_SUPABASE_URL,
