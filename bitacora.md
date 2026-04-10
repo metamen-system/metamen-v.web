@@ -298,3 +298,18 @@ headers de seguridad activos, env vars validadas, CI/CD configurado, PWA instala
 estructura de carpetas canónica, linters y formatters configurados.
 
 **Siguiente:** Módulo 02 — Design System & Componentes UI
+
+## 🔧 HOTFIX — CI/CD Post M01-110
+
+**Fecha:** 2026-04-10
+
+**Problema 1:** Build en GitHub Actions fallaba porque `src/lib/env.ts` validaba
+server-side env vars durante `next build`. Estas vars no existen en el runner de CI.
+
+**Solución:** Detectar `NEXT_PHASE === 'phase-production-build'` y saltar validación
+server en build time. Client vars siguen validándose siempre.
+
+**Problema 2:** GitHub Actions deprecation warning para Node.js 20.
+
+**Solución:** Agregar `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` y actualizar
+`pnpm/action-setup` a v4.
