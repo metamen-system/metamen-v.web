@@ -265,3 +265,36 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `fix(M01-109): broaden API_ROUTES to cover entire /api/ namespace`
 - **Rama:** config/M01-security-pwa
 - **Notas:** Aprobación final tras Ciclo 1 de corrección. Se verificaron `src/lib/env.ts`, `next.config.ts`, `public/manifest.json`, `src/middleware.ts` y `src/app/api/health/route.ts`.
+
+## ✅ MÓDULO 01 — CIERRE COMPLETO
+
+**Fecha:** 2026-04-10
+
+**Tareas completadas:** 110/110 (M01-001 a M01-110)
+
+**Ramas del módulo:**
+
+- `setup/M01-base-infrastructure` → Mergeada a main ✅
+- `feat/M01-routing-pages` → Mergeada a main ✅
+- `setup/M01-architecture-folders` → Mergeada a main ✅
+- `tooling/M01-quality-ci` → Mergeada a main ✅
+- `config/M01-security-pwa` → Mergeada a main ✅ (este merge)
+
+**Verificaciones finales:**
+
+- [x] TypeScript compila sin errores (pnpm tsc --noEmit)
+- [x] ESLint pasa sin errores (pnpm lint)
+- [x] Build de producción exitoso (pnpm build)
+- [x] Todas las ramas mergeadas a main
+- [x] Ramas de feature limpiadas (local y remoto)
+- [x] main sincronizado con origin
+
+**Resultado del Módulo 01:**
+
+Proyecto Next.js 15 inicializado, compilando sin errores, con middleware funcional,
+
+headers de seguridad activos, env vars validadas, CI/CD configurado, PWA instalable,
+
+estructura de carpetas canónica, linters y formatters configurados.
+
+**Siguiente:** Módulo 02 — Design System & Componentes UI
