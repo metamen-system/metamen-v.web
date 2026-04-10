@@ -313,3 +313,7 @@ server en build time. Client vars siguen validándose siempre.
 
 **Solución:** Agregar `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` y actualizar
 `pnpm/action-setup` a v4.
+
+**Ajuste adicional:** Con `pnpm/action-setup@v4` se eliminó `with: version: 9`
+en los workflows para evitar conflicto con `packageManager: "pnpm@9.0.0"` y el
+error `Multiple versions of pnpm specified`.
