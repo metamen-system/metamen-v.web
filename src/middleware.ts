@@ -9,7 +9,7 @@ const PUBLIC_ROUTES: readonly string[] = [
   '/verify-email',
 ] as const;
 
-const API_ROUTES: readonly string[] = ['/api/webhooks', '/api/inngest', '/api/health'] as const;
+const API_ROUTES: readonly string[] = ['/api/'] as const;
 
 const STATIC_FILE_REGEX = /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|css|js|map)$/;
 
