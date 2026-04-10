@@ -34,6 +34,20 @@ const config: Config = {
         // --- M02-005: Accent gold tokens ---
         'accent-gold': '#D4AF37', // BTC, rewards, levels
         'accent-gold-hover': '#B8941F', // Gold hover state
+
+        // --- M02-006: Accent CTA tokens ---
+        'accent-cta': '#FF073A', // Danger buttons, urgency CTAs, death LongPressButton
+        'accent-cta-hover': '#DC143C', // Hover state for CTA
+
+        // --- M02-007: Accent Active tokens ---
+        'accent-active': '#00E5FF', // Links, interactive active states
+        'accent-active-hover': '#00B8CC', // Hover state for active accent
+
+        // --- M02-008: Semantic state tokens ---
+        'state-success': '#00FF88', // Success states, achievements, >=80% day
+        'state-warning': '#FFB800', // Warnings, streak at risk, HP < 5
+        'state-error': '#FF0000', // Errors, death, HP critical (pure red OLED)
+        'state-info': '#00E5FF', // Tooltips, informational (same HEX as accent-active, distinct token)
       },
       // TODO M02: colors, spacing, borderRadius, boxShadow, animation, gradients
     },
