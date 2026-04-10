@@ -48,6 +48,20 @@ const config: Config = {
         'state-warning': '#FFB800', // Warnings, streak at risk, HP < 5
         'state-error': '#FF0000', // Errors, death, HP critical (pure red OLED)
         'state-info': '#00E5FF', // Tooltips, informational (same HEX as accent-active, distinct token)
+
+        // --- M02-009: Vector colors (SSOT §8.5) ---
+        'vector-AURA': '#9B59B6', // Used in TaskCard, VectorRadar, Dashboard progress bars
+        'vector-JAWLINE': '#E74C3C',
+        'vector-WEALTH': '#27AE60',
+        'vector-PHYSIQUE': '#E67E22',
+        'vector-SOCIAL': '#3498DB',
+        'vector-ENV': '#1ABC9C',
+
+        // --- M02-010: Rarity border colors (SSOT §8.7) ---
+        'rarity-common': 'transparent', // No visible border for common items
+        'rarity-rare': '#3498DB',
+        'rarity-epic': '#9B59B6',
+        'rarity-legendary': '#D4AF37',
       },
       // TODO M02: colors, spacing, borderRadius, boxShadow, animation, gradients
     },
