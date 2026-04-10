@@ -223,3 +223,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Verificado `engine-strict=true` en `.npmrc`
   - Confirmado Node 20 en los 3 workflows de GitHub Actions
 - **Verificación**: `pnpm install`, `pnpm typecheck`, `pnpm lint` y `pnpm build` pasan con Node 20; `pnpm install` falla en Node 24 por `ERR_PNPM_UNSUPPORTED_ENGINE`
+
+## [M01-103] — Verificar compilación TypeScript estricta
+
+- **Fecha:** 2026-04-10
+- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: `package.json`
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 2)
+- **Commit:** `feat(M01-103): verify strict TypeScript compilation with zero errors`
+- **Rama:** tooling/M01-quality-ci
+- **Notas:** La restricción `engines.node "<21.0.0"` fue eliminada por no existir en SSOT; el requisito oficial queda en `>=20.0.0`.
