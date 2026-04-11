@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 
 const inter = Inter({
@@ -11,9 +11,14 @@ const inter = Inter({
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -43,7 +48,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="dark">
+    <html
+      lang="es"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} dark`}
+    >
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-[#0A0A0A] text-white min-h-screen antialiased`}
       >
