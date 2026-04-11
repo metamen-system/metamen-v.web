@@ -137,3 +137,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-023a,M02-023aa): configure next/font google fonts and document strategy`
 - **Rama:** feat/M02-theme-provider
 - **Notas:** Ninguna
+
+## [M02-023b | M02-023c] — Integrar ThemeProvider en root layout + Configurar darkMode class-based en tailwind.config.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE | CONFIG
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/app/layout.tsx, tailwind.config.ts, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-023b,M02-023c): integrate ThemeProvider in root layout and configure Tailwind darkMode class strategy`
+- **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
