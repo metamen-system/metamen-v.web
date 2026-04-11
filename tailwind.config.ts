@@ -9,6 +9,23 @@ const config: Config = {
         body: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Menlo', 'monospace'],
       },
+      fontSize: {
+        // Typography Scale — 11 responsive tokens with clamp()
+        'large-title': ['clamp(1.75rem, 4vw, 2.5rem)', { lineHeight: '1.2', fontWeight: '900' }],
+        'title-1': ['clamp(1.5rem, 3vw, 2rem)', { lineHeight: '1.25', fontWeight: '700' }],
+        'title-2': ['clamp(1.25rem, 2.5vw, 1.625rem)', { lineHeight: '1.3', fontWeight: '700' }],
+        'title-3': ['clamp(1.125rem, 2vw, 1.375rem)', { lineHeight: '1.35', fontWeight: '600' }],
+        headline: ['clamp(1rem, 1.5vw, 1.125rem)', { lineHeight: '1.4', fontWeight: '600' }],
+        body: ['clamp(1rem, 1.2vw, 1.0625rem)', { lineHeight: '1.5', fontWeight: '400' }],
+        callout: ['clamp(0.9375rem, 1.1vw, 1rem)', { lineHeight: '1.5', fontWeight: '400' }],
+        subhead: ['clamp(0.875rem, 1vw, 0.9375rem)', { lineHeight: '1.5', fontWeight: '400' }],
+        footnote: ['clamp(0.8125rem, 0.9vw, 0.875rem)', { lineHeight: '1.45', fontWeight: '400' }],
+        'caption-1': ['clamp(0.75rem, 0.8vw, 0.8125rem)', { lineHeight: '1.4', fontWeight: '400' }],
+        'caption-2': [
+          'clamp(0.6875rem, 0.75vw, 0.75rem)',
+          { lineHeight: '1.35', fontWeight: '400' },
+        ],
+      },
       screens: {
         sm: '640px',
         md: '768px',
