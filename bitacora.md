@@ -16,8 +16,8 @@
 | ----------------------- | ----------------------------------------------- |
 | Fase actual             | Cierre M01 + Hotfix CI/CD completado            |
 | Módulo en curso         | **M02: Design System & Componentes UI**         |
-| Última tarea completada | `M02-015` — Keyframes shimmer y breathe + animations funcionales Tailwind v4 |
-| Próxima tarea           | `M02-016` — Gradients y utilidades visuales (pendiente de ejecución) |
+| Última tarea completada | `M02-021b` — Safe area insets en `globals.css` |
+| Próxima tarea           | `M02-022` — Theme Provider (pendiente de ejecución) |
 | Bloqueadores            | Ninguno                                         |
 | Fecha inicio proyecto   | 2026-02-21                                      |
 | Branch                  | main                                            |
@@ -34,7 +34,7 @@
 
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
-M02: Design System               [██░░░░░░░░] 15/??
+M02: Design System               [██░░░░░░░░] 22/108
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
@@ -59,7 +59,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-- **Total actual**: 125 tareas completadas.
+- **Total actual**: 133 tareas completadas.
 
 ### BLOQUE CONSOLIDADO M01-001 a M01-110 (MODULO 01)
 
@@ -89,19 +89,18 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Este bloque reemplaza el detalle individual de tareas M01 para mantener `bitacora.md` ligero.
   - Se conserva trazabilidad general del módulo sin perder estado de cierre ni hotfix de CI/CD.
 
-### BLOQUE CONSOLIDADO M02-001 a M02-015 (MODULO 02 — PARCIAL)
+### BLOQUE CONSOLIDADO M02-001 a M02-021b (MODULO 02 — PARCIAL)
 
-- **Rango**: `M02-001` → `M02-015`
+- **Rango**: `M02-001` → `M02-021b`
 - **Estado global**: ✅ COMPLETADO / APROBADO (bloque parcial)
-- **Fecha de cierre del bloque**: 2026-04-10
+- **Fecha de cierre del bloque**: 2026-04-11
 - **Módulo**: 02 — Design System & Componentes UI
 - **Aprobación auditoría**: 100% consolidado (incluye reauditorías)
 - **Resumen ejecutivo de entregables**:
   - Instalación de utilidades UI base y creación de helper `cn()` para composición de clases.
-  - Configuración de tokens de color del sistema (fondos, texto, acentos, estados, vectores y rareza).
-  - Definición de escala tipográfica responsiva con `clamp()` para 11 tokens.
-  - Implementación de tokens de `borderRadius` y `boxShadow` (incluyendo variantes de color).
-  - Integración de animaciones `shimmer` y `breathe` para Tailwind v4 con soporte CSS-first en `globals.css`.
+  - Configuración de design tokens (colores, tipografía responsiva, radius, shadows y animaciones).
+  - Implementación de utilidades CSS en `globals.css`: gradientes, shadows de color, rarity borders y avatar aura tiers.
+  - Integración de `@keyframes shimmer`, scrollbar personalizado dark theme y utilidades de safe area insets.
 - **Archivos principales impactados**:
   - `package.json`
   - `pnpm-lock.yaml`
@@ -111,36 +110,43 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Rama de trabajo**:
   - `config/M02-tailwind-tokens`
 - **Notas**:
-  - Este bloque reemplaza el detalle individual de M02-001 a M02-015 para mantener `bitacora.md` ligero.
+  - Este bloque reemplaza el detalle individual de M02-001 a M02-021b para mantener `bitacora.md` ligero.
 
-### M02-016 | M02-017 — Agregar clases de gradiente y shadow CSS a globals.css
+## [M02-022] — Crear src/providers/ThemeProvider.tsx
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/providers/ThemeProvider.tsx
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-022): create ThemeProvider with dark/light mode toggle and localStorage persistence`
+- **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
 
-- **Tarea**: `M02-016 | M02-017`
-- **Título**: Agregar clases de gradiente y shadow CSS a `globals.css`
-- **Fecha completación**: 2026-04-10
-- **Score auditoría**: 100%
-- **Tipo de aprobación**: PRIMERA AUDITORÍA
-- **Archivos**: `src/app/globals.css`
-- **Rama**: `config/M02-tailwind-tokens`
+## [M02-023a | M02-023aa] — Configurar fuentes next/font en root layout | Documentar estrategia de fuentes
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE | SETUP
+- **Archivos:**
+  - Creados: public/fonts/README.md
+  - Modificados: src/app/layout.tsx, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-023a,M02-023aa): configure next/font google fonts and document strategy`
+- **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
 
-### M02-018 | M02-019 — Agregar clases rarity-border y avatar-aura CSS a globals.css
-
-- **Tarea**: `M02-018 | M02-019`
-- **Título**: Agregar clases rarity-border y avatar-aura CSS a `globals.css`
-- **Fecha completación**: 2026-04-11
-- **Score auditoría**: 100%
-- **Tipo de aprobación**: REAUDITORÍA CICLO 1
-- **Archivos**: `src/app/globals.css`, `.gitignore`, `docs/modulos/` (eliminados)
-- **Rama**: `config/M02-tailwind-tokens`
-
-### M02-020 | M02-021a | M02-021b — Agregar keyframe shimmer CSS | Agregar estilos de scrollbar personalizado | Agregar clases de safe area insets
-
-- **Tareas**: `M02-020`, `M02-021a`, `M02-021b`
-- **Títulos**: Agregar keyframe shimmer CSS | Agregar estilos de scrollbar personalizado | Agregar clases de safe area insets
-- **Fecha completación**: 2026-04-11
-- **Score auditoría**: 100%
-- **Tipo de aprobación**: REAUDITORÍA CICLO 1
-- **Archivos**: `src/app/globals.css`
-- **Rama**: `config/M02-tailwind-tokens`
-- **Nota**: ✅ ÚLTIMA TAREA DE LA RAMA — rama cerrada y mergeada
-- **Corrección aplicada**: Revertido cambio fuera de scope en `layout.tsx`
+## [M02-023b | M02-023c] — Integrar ThemeProvider en root layout + Configurar darkMode class-based en tailwind.config.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE | CONFIG
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/app/layout.tsx, tailwind.config.ts, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-023b,M02-023c): integrate ThemeProvider in root layout and configure Tailwind darkMode class strategy`
+- **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
