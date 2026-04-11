@@ -1,6 +1,54 @@
 @import 'tailwindcss';
 @config "../../tailwind.config.ts";
 
+@layer utilities {
+  /* === Gradient Utilities (SSOT UI_UX_SPEC) === */
+  .gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, #ff073a 0%, #dc143c 100%);
+  }
+
+  .gradient-premium {
+    background: linear-gradient(135deg, #d4af37 0%, #9b59b6 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  }
+
+  .gradient-cyber {
+    background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  }
+
+  .gradient-vignette-danger {
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(255, 7, 58, 0.3) 100%);
+  }
+
+  /* === Custom Color Shadow Utilities (SSOT UI_UX_SPEC) === */
+  .shadow-gold {
+    box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.3);
+  }
+
+  .shadow-red {
+    box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.4);
+  }
+
+  .shadow-success {
+    box-shadow: 0 0 20px 0 rgba(0, 255, 136, 0.4);
+  }
+
+  .shadow-cyan {
+    box-shadow: 0 0 15px 0 rgba(0, 229, 255, 0.3);
+  }
+}
+
 @theme {
   --radius-sm: 4px;
   --radius-md: 8px;
