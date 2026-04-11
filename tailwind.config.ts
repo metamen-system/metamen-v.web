@@ -98,6 +98,20 @@ const config: Config = {
         success: '0 0 20px 0 rgba(0,255,136,0.4)',
         cyan: '0 0 15px 0 rgba(0,229,255,0.3)',
       },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        breathe: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite ease-in-out',
+        breathe: 'breathe 3s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

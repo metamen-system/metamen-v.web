@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@config "../../tailwind.config.ts";
 
 @theme {
   --radius-sm: 4px;
@@ -16,6 +17,30 @@
   --shadow-red: 0 0 20px 0 rgba(255, 0, 0, 0.4);
   --shadow-success: 0 0 20px 0 rgba(0, 255, 136, 0.4);
   --shadow-cyan: 0 0 15px 0 rgba(0, 229, 255, 0.3);
+
+  --animate-shimmer: shimmer 1.5s infinite ease-in-out;
+  --animate-breathe: breathe 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 html {
