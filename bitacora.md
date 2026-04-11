@@ -224,3 +224,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-034,M02-035,M02-036,M02-037): add system hooks useMediaQuery, useHapticFeedback, useReducedMotion, useOnlineStatus`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-038] — Crear src/lib/navigation/constants.ts con navItems
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/lib/navigation/constants.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-038): add navigation constants with navItems and NavItem type`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
