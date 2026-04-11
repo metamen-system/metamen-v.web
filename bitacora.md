@@ -124,3 +124,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-022): create ThemeProvider with dark/light mode toggle and localStorage persistence`
 - **Rama:** feat/M02-theme-provider
 - **Notas:** Ninguna
+
+## [M02-023a | M02-023aa] — Configurar fuentes next/font en root layout | Documentar estrategia de fuentes
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE | SETUP
+- **Archivos:**
+  - Creados: public/fonts/README.md
+  - Modificados: src/app/layout.tsx, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-023a,M02-023aa): configure next/font google fonts and document strategy`
+- **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
