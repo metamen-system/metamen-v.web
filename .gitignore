@@ -67,3 +67,6 @@ blob-report/
 *.swp
 
 *.swo
+
+# Bitácora interna de progreso
+bitacora.md

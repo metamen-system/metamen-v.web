@@ -1,4 +1,184 @@
 @import 'tailwindcss';
+@config "../../tailwind.config.ts";
+
+@layer utilities {
+  /* === Gradient Utilities (SSOT UI_UX_SPEC) === */
+  .gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, #ff073a 0%, #dc143c 100%);
+  }
+
+  .gradient-premium {
+    background: linear-gradient(135deg, #d4af37 0%, #9b59b6 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  }
+
+  .gradient-cyber {
+    background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  }
+
+  .gradient-vignette-danger {
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(255, 7, 58, 0.3) 100%);
+  }
+
+  /* === Custom Color Shadow Utilities (SSOT UI_UX_SPEC) === */
+  .shadow-gold {
+    box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.3);
+  }
+
+  .shadow-red {
+    box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.4);
+  }
+
+  .shadow-success {
+    box-shadow: 0 0 20px 0 rgba(0, 255, 136, 0.4);
+  }
+
+  .shadow-cyan {
+    box-shadow: 0 0 15px 0 rgba(0, 229, 255, 0.3);
+  }
+
+  /* Rarity border styles — used by ItemCard in Store (Module 12) */
+  .rarity-common {
+    /* No additional styles — default appearance */
+  }
+
+  .rarity-rare {
+    border: 1px solid #3498db;
+  }
+
+  .rarity-epic {
+    border: 2px solid #9b59b6;
+  }
+
+  .rarity-legendary {
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.3);
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 85%,
+      rgba(212, 175, 55, 0.1) 100%
+    );
+    animation: shimmer 2s infinite ease-in-out;
+    background-size: 200% 100%;
+  }
+
+  /* =============================================
+  AVATAR AURA SYSTEM
+  Visual aura glow for avatar compositing (Layer 5)
+  Tiers map to aura_lvl ranges (0-50)
+  ============================================= */
+  .avatar-aura {
+    --aura-intensity: 0;
+    --aura-color: #9b59b6;
+    --aura-radius: 0px;
+    filter: drop-shadow(0 0 var(--aura-radius) var(--aura-color));
+    opacity: var(--aura-intensity);
+    transition: all 0.5s ease-out;
+  }
+
+  .avatar-aura.tier-0 {
+    --aura-intensity: 0;
+    --aura-radius: 0px;
+  }
+
+  .avatar-aura.tier-1 {
+    --aura-intensity: 0.2;
+    --aura-radius: 5px;
+  }
+
+  .avatar-aura.tier-2 {
+    --aura-intensity: 0.4;
+    --aura-radius: 15px;
+  }
+
+  .avatar-aura.tier-3 {
+    --aura-intensity: 0.6;
+    --aura-radius: 25px;
+  }
+
+  .avatar-aura.tier-4 {
+    --aura-intensity: 0.8;
+    --aura-radius: 35px;
+    --aura-color: #d4af37;
+  }
+
+  .avatar-aura.tier-5 {
+    --aura-intensity: 1;
+    --aura-radius: 50px;
+    --aura-color: #ffd700;
+  }
+
+  /* Safe area insets for notch devices — WCAG 2.1 AA (M02-021b) */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+@theme {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 20px 0 rgba(212, 175, 55, 0.3);
+  --shadow-red: 0 0 20px 0 rgba(255, 0, 0, 0.4);
+  --shadow-success: 0 0 20px 0 rgba(0, 255, 136, 0.4);
+  --shadow-cyan: 0 0 15px 0 rgba(0, 229, 255, 0.3);
+
+  --animate-shimmer: shimmer 1.5s infinite ease-in-out;
+  --animate-breathe: breathe 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
 
 html {
   background-color: #0a0a0a;
@@ -8,6 +188,25 @@ html {
 @layer base {
   body {
     @apply bg-[#0A0A0A] text-white antialiased;
+  }
+
+  /* Custom scrollbar — dark theme consistent (M02-021a) */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2d2d2d;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
   }
 }
 

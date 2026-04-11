@@ -12,15 +12,15 @@
 
 ## ESTADO GENERAL
 
-| Campo                   | Valor                                             |
-| ----------------------- | ------------------------------------------------- |
-| Fase actual             | Infraestructura inicial                           |
-| Módulo en curso         | **M01: Infraestructura & Fundación del Proyecto** |
-| Última tarea completada | `M01-093` — Crear workflow production release     |
-| Próxima tarea           | `M01-094` — Configuración manual de Vercel        |
-| Bloqueadores            | Ninguno                                           |
-| Fecha inicio proyecto   | 2026-02-21                                        |
-| Branch                  | tooling/M01-quality-ci                            |
+| Campo                   | Valor                                           |
+| ----------------------- | ----------------------------------------------- |
+| Fase actual             | Cierre M01 + Hotfix CI/CD completado            |
+| Módulo en curso         | **M02: Design System & Componentes UI**         |
+| Última tarea completada | `M02-015` — Keyframes shimmer y breathe + animations funcionales Tailwind v4 |
+| Próxima tarea           | `M02-016` — Gradients y utilidades visuales (pendiente de ejecución) |
+| Bloqueadores            | Ninguno                                         |
+| Fecha inicio proyecto   | 2026-02-21                                      |
+| Branch                  | main                                            |
 
 ## DEUDA TÉCNICA PENDIENTE
 
@@ -33,8 +33,8 @@
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
-M01: Infraestructura             [████████░░] 93/110  ← EN CURSO
-M02: Design System               [░░░░░░░░░░] 0/??
+M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
+M02: Design System               [██░░░░░░░░] 15/??
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
@@ -59,265 +59,88 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-- **Total actual**: 93 tareas completadas.
+- **Total actual**: 125 tareas completadas.
 
-### BLOQUE M01-001 a M01-090 (RESUMEN CONSOLIDADO)
+### BLOQUE CONSOLIDADO M01-001 a M01-110 (MODULO 01)
 
-- **Rango**: `M01-001` → `M01-090`
+- **Rango**: `M01-001` → `M01-110`
 - **Estado global**: ✅ COMPLETADO / APROBADO
-- **Corte**: 2026-04-08
+- **Fecha de cierre**: 2026-04-10
 - **Módulo**: 01 — Infraestructura & Fundación del Proyecto
-- **Aprobación auditoría**: 100% consolidado (incluye ciclos de reauditoría documentados)
-- **Resumen de entregables**:
-  - Base del repositorio y bootstrap de Next.js 15 + TypeScript estricto + pnpm + setup inicial de calidad (`M01-001` a `M01-011`).
-  - Arquitectura inicial App Router, rutas auth/dashboard/onboarding y handlers API placeholder (`M01-012` a `M01-038`).
-  - Estructura de carpetas `src/lib`, `src/components`, `src/actions`, `src/hooks`, `src/providers` y `public` (`M01-041` a `M01-067`).
-  - Configuración de seguridad y PWA (robots, sitemap, postcss, tailwind, env, metadata, service worker, middleware base) (`M01-068` a `M01-084`).
-  - Tooling de calidad para flujo local/CI: Prettier, `.editorconfig`, Husky pre-commit, `lint-staged` y scripts npm estándar (`M01-086` a `M01-090`).
-- **Ramas usadas en el bloque**:
+- **Aprobación auditoría**: 100% consolidado (incluye reauditorías)
+- **Resumen ejecutivo de entregables**:
+  - Bootstrap de repositorio y base técnica: Next.js 15, React 19, TypeScript estricto, pnpm y configuración inicial de calidad.
+  - Arquitectura App Router con rutas auth/app/onboarding y handlers API base.
+  - Estructura canónica de carpetas (`src/lib`, `src/components`, `src/actions`, `src/hooks`, `src/providers`, `public`, `tests`).
+  - Seguridad y PWA base: middleware, headers, manifest, robots/sitemap y service worker placeholder.
+  - Tooling y CI/CD: ESLint, Prettier, Husky, lint-staged, workflows CI/Preview/Production y validaciones de build/typecheck/lint.
+  - Verificaciones finales del módulo: compilación TypeScript, lint y build de producción en verde.
+- **Ramas utilizadas y mergeadas**:
   - `setup/M01-base-infrastructure`
   - `feat/M01-routing-pages`
   - `setup/M01-architecture-folders`
   - `config/M01-security-pwa`
   - `tooling/M01-quality-ci`
+- **Hotfix post-cierre incluido (2026-04-10)**:
+  - `env.ts` ajustado para validar variables server-only en runtime y evitar falla de build en CI.
+  - Workflows de GitHub Actions actualizados para runtime Node 24 (`actions/checkout@v6`, `actions/setup-node@v6`, `pnpm/action-setup@v5`).
+  - Estabilización de workflow de producción (E2E/build/deploy) con `NEXT_PUBLIC_*` placeholders en CI.
 - **Notas**:
-  - Se consolida el historial `M01-001` a `M01-090` en un solo bloque para mantener `bitacora.md` ligero.
-  - Para auditorías de permisos en hooks, usar `git ls-files -s` como verificación principal y `test -x` solo como verificación secundaria en entornos POSIX.
-  - Se mantiene deuda técnica abierta `DT-001` para `eslint.config.mjs` (trazabilidad histórica).
+  - Este bloque reemplaza el detalle individual de tareas M01 para mantener `bitacora.md` ligero.
+  - Se conserva trazabilidad general del módulo sin perder estado de cierre ni hotfix de CI/CD.
 
-## [M01-091] — Crear .github/workflows/ci.yml para checks en PR
+### BLOQUE CONSOLIDADO M02-001 a M02-015 (MODULO 02 — PARCIAL)
 
-- **Fecha:** 2026-04-08
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: `.github/workflows/ci.yml`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `ci(M01-091/092/093): add CI checks, preview deploy, and production release workflows`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Ninguna
+- **Rango**: `M02-001` → `M02-015`
+- **Estado global**: ✅ COMPLETADO / APROBADO (bloque parcial)
+- **Fecha de cierre del bloque**: 2026-04-10
+- **Módulo**: 02 — Design System & Componentes UI
+- **Aprobación auditoría**: 100% consolidado (incluye reauditorías)
+- **Resumen ejecutivo de entregables**:
+  - Instalación de utilidades UI base y creación de helper `cn()` para composición de clases.
+  - Configuración de tokens de color del sistema (fondos, texto, acentos, estados, vectores y rareza).
+  - Definición de escala tipográfica responsiva con `clamp()` para 11 tokens.
+  - Implementación de tokens de `borderRadius` y `boxShadow` (incluyendo variantes de color).
+  - Integración de animaciones `shimmer` y `breathe` para Tailwind v4 con soporte CSS-first en `globals.css`.
+- **Archivos principales impactados**:
+  - `package.json`
+  - `pnpm-lock.yaml`
+  - `src/lib/utils.ts`
+  - `tailwind.config.ts`
+  - `src/app/globals.css`
+- **Rama de trabajo**:
+  - `config/M02-tailwind-tokens`
+- **Notas**:
+  - Este bloque reemplaza el detalle individual de M02-001 a M02-015 para mantener `bitacora.md` ligero.
 
-## [M01-092] — Crear .github/workflows/preview.yml para deploy preview
+### M02-016 | M02-017 — Agregar clases de gradiente y shadow CSS a globals.css
 
-- **Fecha:** 2026-04-08
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: `.github/workflows/preview.yml`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `ci(M01-091/092/093): add CI checks, preview deploy, and production release workflows`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Ninguna
+- **Tarea**: `M02-016 | M02-017`
+- **Título**: Agregar clases de gradiente y shadow CSS a `globals.css`
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: PRIMERA AUDITORÍA
+- **Archivos**: `src/app/globals.css`
+- **Rama**: `config/M02-tailwind-tokens`
 
-## [M01-093] — Crear .github/workflows/production.yml para release
+### M02-018 | M02-019 — Agregar clases rarity-border y avatar-aura CSS a globals.css
 
-- **Fecha:** 2026-04-08
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: `.github/workflows/production.yml`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `ci(M01-091/092/093): add CI checks, preview deploy, and production release workflows`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Ninguna
+- **Tarea**: `M02-018 | M02-019`
+- **Título**: Agregar clases rarity-border y avatar-aura CSS a `globals.css`
+- **Fecha completación**: 2026-04-11
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: `src/app/globals.css`, `.gitignore`, `docs/modulos/` (eliminados)
+- **Rama**: `config/M02-tailwind-tokens`
 
-## [M01-097 | M01-098] — Crear vitest.config.ts y playwright.config.ts con configuración base
+### M02-020 | M02-021a | M02-021b — Agregar keyframe shimmer CSS | Agregar estilos de scrollbar personalizado | Agregar clases de safe area insets
 
-- **Fecha:** 2026-04-08
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: `vitest.config.ts`, `tests/setup.ts`, `playwright.config.ts`, `tests/e2e/.gitkeep`, `tests/e2e/placeholder.spec.ts`
-  - Modificados: `package.json`, `pnpm-lock.yaml`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 4 (REAUDITORÍA CICLO 4)
-- **Commit:** `config(M01-097,M01-098): add vitest and playwright base configurations`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** `workers` usa spread condicional por incompatibilidad entre `exactOptionalPropertyTypes` y la sintaxis literal de la acción original.
-
-## [M01-099] — Crear tests directory structure
-
-- **Fecha:** 2026-04-08
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** SETUP
-- **Archivos:**
-  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M01-099): create tests directory structure with unit, property-based, integration dirs and factories stub`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Ninguna
-
-## [M01-099] — Crear tests directory structure
-
-- **Fecha:** 2026-04-09
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** SETUP
-- **Archivos:**
-  - Creados: `tests/unit/core/.gitkeep`, `tests/property-based/.gitkeep`, `tests/integration/.gitkeep`, `tests/utils/factories.ts`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
-- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Aprobada en reauditoría junto con M01-100.
-
-## [M01-100] — Crear .gitignore completo
-
-- **Fecha:** 2026-04-09
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CONFIG
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: `.gitignore`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
-- **Commit:** `feat(M01-099,M01-100): add test directory structure and comprehensive gitignore`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** .gitignore normalizado a la spec exacta de M01-100.
-
-## [M01-101] — Crear README.md del proyecto
-
-- **Fecha:** 2026-04-09
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** DOCS
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: `README.md`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
-- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Badge de CI en formato Markdown renderizable agregado con URL real de GitHub Actions.
-
-## [M01-102] — Crear archivo de tipos globales del proyecto
-
-- **Fecha:** 2026-04-09
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: `src/types/global.d.ts`
-  - Modificados: Ninguno
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
-- **Commit:** `docs(M01-101): add project README with CI badge; feat(M01-102): add global type declarations`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Se conservaron solo declaraciones no cubiertas por Next.js para evitar conflictos con `StaticImageData`.
-
-## HOTFIX-NODE-VERSION — Corrección versión Node
-
-- **Problema**: Entorno local ejecutaba Node `v24.14.0`, proyecto requiere Node 20.x
-- **Riesgo**: Incompatibilidad runtime local vs producción (Vercel Node 20)
-- **Solución**:
-  - Activado Node 20 via `fnm`
-  - Creado `.node-version` con valor `20`
-  - Confirmado `.nvmrc` con valor `20`
-  - Ajustado `engines.node` a `">=20.0.0 <21.0.0"` (bloqueo explícito)
-  - Verificado `engine-strict=true` en `.npmrc`
-  - Confirmado Node 20 en los 3 workflows de GitHub Actions
-- **Verificación**: `pnpm install`, `pnpm typecheck`, `pnpm lint` y `pnpm build` pasan con Node 20; `pnpm install` falla en Node 24 por `ERR_PNPM_UNSUPPORTED_ENGINE`
-
-## [M01-103] — Verificar compilación TypeScript estricta
-
-- **Fecha:** 2026-04-10
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: `package.json`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 2)
-- **Commit:** `feat(M01-103): verify strict TypeScript compilation with zero errors`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** La restricción `engines.node "<21.0.0"` fue eliminada por no existir en SSOT; el requisito oficial queda en `>=20.0.0`.
-
-## [M01-104 | M01-105] — Verificar build de producción Next.js y ejecución de ESLint
-
-- **Fecha:** 2026-04-10
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: Ninguno (verificación de tooling)
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `verify(M01-104,M01-105): production build and ESLint config verified`
-- **Rama:** tooling/M01-quality-ci
-- **Notas:** Build de producción y servidor validados con headers de seguridad SSOT; ESLint ejecuta sin errores de configuración.
-
-## [M01-106 | M01-107 | M01-108 | M01-109] — Verificaciones de env vars, security headers, manifest y rutas públicas
-
-- **Fecha:** 2026-04-10
-- **Módulo:** 01 — Infraestructura & Fundación del Proyecto
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: `src/middleware.ts`
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 2 (REAUDITORÍA CICLO 1)
-- **Commit:** `fix(M01-109): broaden API_ROUTES to cover entire /api/ namespace`
-- **Rama:** config/M01-security-pwa
-- **Notas:** Aprobación final tras Ciclo 1 de corrección. Se verificaron `src/lib/env.ts`, `next.config.ts`, `public/manifest.json`, `src/middleware.ts` y `src/app/api/health/route.ts`.
-
-## ✅ MÓDULO 01 — CIERRE COMPLETO
-
-**Fecha:** 2026-04-10
-
-**Tareas completadas:** 110/110 (M01-001 a M01-110)
-
-**Ramas del módulo:**
-
-- `setup/M01-base-infrastructure` → Mergeada a main ✅
-- `feat/M01-routing-pages` → Mergeada a main ✅
-- `setup/M01-architecture-folders` → Mergeada a main ✅
-- `tooling/M01-quality-ci` → Mergeada a main ✅
-- `config/M01-security-pwa` → Mergeada a main ✅ (este merge)
-
-**Verificaciones finales:**
-
-- [x] TypeScript compila sin errores (pnpm tsc --noEmit)
-- [x] ESLint pasa sin errores (pnpm lint)
-- [x] Build de producción exitoso (pnpm build)
-- [x] Todas las ramas mergeadas a main
-- [x] Ramas de feature limpiadas (local y remoto)
-- [x] main sincronizado con origin
-
-**Resultado del Módulo 01:**
-
-Proyecto Next.js 15 inicializado, compilando sin errores, con middleware funcional,
-
-headers de seguridad activos, env vars validadas, CI/CD configurado, PWA instalable,
-
-estructura de carpetas canónica, linters y formatters configurados.
-
-**Siguiente:** Módulo 02 — Design System & Componentes UI
-
-## 🔧 HOTFIX — CI/CD Post M01-110
-
-**Fecha:** 2026-04-10
-
-**Problema 1:** Build en GitHub Actions fallaba porque `src/lib/env.ts` validaba
-server-side env vars durante `next build`. Estas vars no existen en el runner de CI.
-
-**Solución:** Detectar `NEXT_PHASE === 'phase-production-build'` y saltar validación
-server en build time. Client vars siguen validándose siempre.
-
-**Problema 2:** GitHub Actions deprecation warning para Node.js 20.
-
-**Solución:** Agregar `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` y actualizar
-`pnpm/action-setup` a v4.
-
-**Ajuste adicional:** Con `pnpm/action-setup@v4` se eliminó `with: version: 9`
-en los workflows para evitar conflicto con `packageManager: "pnpm@9.0.0"` y el
-error `Multiple versions of pnpm specified`.
-
-**Ajuste adicional 2:** Se actualizaron las actions a versiones con runtime Node 24
-(`actions/checkout@v6`, `actions/setup-node@v6`, `pnpm/action-setup@v5`) y se
-inyectaron `NEXT_PUBLIC_*` placeholders en el paso E2E de `production.yml`.
+- **Tareas**: `M02-020`, `M02-021a`, `M02-021b`
+- **Títulos**: Agregar keyframe shimmer CSS | Agregar estilos de scrollbar personalizado | Agregar clases de safe area insets
+- **Fecha completación**: 2026-04-11
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: `src/app/globals.css`
+- **Rama**: `config/M02-tailwind-tokens`
+- **Nota**: ✅ ÚLTIMA TAREA DE LA RAMA — rama cerrada y mergeada
+- **Corrección aplicada**: Revertido cambio fuera de scope en `layout.tsx`
