@@ -59,7 +59,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-- **Total actual**: 133 tareas completadas.
+- **Total actual**: 134 tareas completadas.
 
 ### BLOQUE CONSOLIDADO M01-001 a M01-110 (MODULO 01)
 
@@ -149,4 +149,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
 - **Commit:** `feat(M02-023b,M02-023c): integrate ThemeProvider in root layout and configure Tailwind darkMode class strategy`
 - **Rama:** feat/M02-theme-provider
+- **Notas:** Ninguna
+
+## [M02-024] — Crear src/lib/animations/constants.ts — pageTransition
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/lib/animations/constants.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-024): add pageTransition Framer Motion preset`
+- **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
