@@ -159,3 +159,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `config(M02-032): add barrel exports for all 8 Framer Motion presets`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-033] — Crear src/app/template.tsx con AnimatePresence
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/app/template.tsx
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-033): add template.tsx with AnimatePresence page transitions`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
