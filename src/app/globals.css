@@ -119,6 +119,23 @@
     --aura-radius: 50px;
     --aura-color: #ffd700;
   }
+
+  /* Safe area insets for notch devices — WCAG 2.1 AA (M02-021b) */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
 }
 
 @theme {
@@ -171,6 +188,25 @@ html {
 @layer base {
   body {
     @apply bg-[#0A0A0A] text-white antialiased;
+  }
+
+  /* Custom scrollbar — dark theme consistent (M02-021a) */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2d2d2d;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
   }
 }
 
