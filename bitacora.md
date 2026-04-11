@@ -146,3 +146,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-028..031): add btcGainFloat, heartLoss, avatarDeath, idleBreathing animation presets`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-032] — Actualizar src/lib/animations/index.ts con barrel exports
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/lib/animations/index.ts, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `config(M02-032): add barrel exports for all 8 Framer Motion presets`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
