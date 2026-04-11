@@ -172,3 +172,55 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-033): add template.tsx with AnimatePresence page transitions`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-034] — Crear src/hooks/useMediaQuery.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/hooks/useMediaQuery.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-034,M02-035,M02-036,M02-037): add system hooks useMediaQuery, useHapticFeedback, useReducedMotion, useOnlineStatus`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
+
+## [M02-035] — Crear src/hooks/useHapticFeedback.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/hooks/useHapticFeedback.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-034,M02-035,M02-036,M02-037): add system hooks useMediaQuery, useHapticFeedback, useReducedMotion, useOnlineStatus`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
+
+## [M02-036] — Crear src/hooks/useReducedMotion.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/hooks/useReducedMotion.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-034,M02-035,M02-036,M02-037): add system hooks useMediaQuery, useHapticFeedback, useReducedMotion, useOnlineStatus`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
+
+## [M02-037] — Crear src/hooks/useOnlineStatus.ts
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/hooks/useOnlineStatus.ts
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-034,M02-035,M02-036,M02-037): add system hooks useMediaQuery, useHapticFeedback, useReducedMotion, useOnlineStatus`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
