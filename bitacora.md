@@ -128,3 +128,33 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Tipo de aprobación**: REAUDITORÍA CICLO 1
 - **Archivos**: tailwind.config.ts
 - **Rama**: config/M02-tailwind-tokens
+
+### M02-011 | M02-012 — Agregar escala de border radius + tokens de box shadow a tailwind.config.ts
+
+- **Tarea**: M02-011 | M02-012
+- **Título**: Agregar escala de border radius + tokens de box shadow a tailwind.config.ts
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: tailwind.config.ts, src/app/globals.css
+- **Rama**: config/M02-tailwind-tokens
+
+### M02-013 — Agregar escala tipográfica fontSize a tailwind.config.ts
+
+- **Tarea**: M02-013
+- **Título**: Agregar escala tipográfica fontSize a tailwind.config.ts
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: tailwind.config.ts
+- **Rama**: config/M02-tailwind-tokens
+
+### M02-014 | M02-015 — Keyframes shimmer y breathe + animations funcionales Tailwind v4
+
+- **Tarea**: M02-014 | M02-015
+- **Título**: Keyframes shimmer y breathe + animations funcionales Tailwind v4
+- **Fecha completación**: 2026-04-10
+- **Score auditoría**: 100%
+- **Tipo de aprobación**: REAUDITORÍA CICLO 1
+- **Archivos**: tailwind.config.ts, src/app/globals.css
+- **Rama**: config/M02-tailwind-tokens
