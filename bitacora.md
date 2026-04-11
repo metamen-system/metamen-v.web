@@ -16,11 +16,11 @@
 | ----------------------- | ----------------------------------------------- |
 | Fase actual             | Cierre M01 + Hotfix CI/CD completado            |
 | Módulo en curso         | **M02: Design System & Componentes UI**         |
-| Última tarea completada | `M02-021b` — Safe area insets en `globals.css` |
-| Próxima tarea           | `M02-022` — Theme Provider (pendiente de ejecución) |
+| Última tarea completada | `M02-024` — pageTransition en `constants.ts` |
+| Próxima tarea           | `M02-025` — Preset `buttonPress` |
 | Bloqueadores            | Ninguno                                         |
 | Fecha inicio proyecto   | 2026-02-21                                      |
-| Branch                  | main                                            |
+| Branch                  | config/M02-framer-presets                       |
 
 ## DEUDA TÉCNICA PENDIENTE
 
@@ -34,7 +34,7 @@
 
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
-M02: Design System               [██░░░░░░░░] 22/108
+M02: Design System               [██░░░░░░░░] 24/108
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
@@ -89,9 +89,9 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Este bloque reemplaza el detalle individual de tareas M01 para mantener `bitacora.md` ligero.
   - Se conserva trazabilidad general del módulo sin perder estado de cierre ni hotfix de CI/CD.
 
-### BLOQUE CONSOLIDADO M02-001 a M02-021b (MODULO 02 — PARCIAL)
+### BLOQUE CONSOLIDADO M02-001 a M02-024 (MODULO 02 — PARCIAL)
 
-- **Rango**: `M02-001` → `M02-021b`
+- **Rango**: `M02-001` → `M02-024`
 - **Estado global**: ✅ COMPLETADO / APROBADO (bloque parcial)
 - **Fecha de cierre del bloque**: 2026-04-11
 - **Módulo**: 02 — Design System & Componentes UI
@@ -99,67 +99,37 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Resumen ejecutivo de entregables**:
   - Instalación de utilidades UI base y creación de helper `cn()` para composición de clases.
   - Configuración de design tokens (colores, tipografía responsiva, radius, shadows y animaciones).
-  - Implementación de utilidades CSS en `globals.css`: gradientes, shadows de color, rarity borders y avatar aura tiers.
-  - Integración de `@keyframes shimmer`, scrollbar personalizado dark theme y utilidades de safe area insets.
+  - Implementación de utilidades CSS en `globals.css`: gradientes, shadows de color, rarity borders, avatar aura tiers, `@keyframes shimmer`, scrollbar dark y safe area insets.
+  - Implementación de sistema de tema: `ThemeProvider`, integración en root layout y estrategia dark mode class-based (`tailwind.config.ts`).
+  - Configuración de tipografías con `next/font/google` (Inter, Space Grotesk, JetBrains Mono) y documentación de estrategia en `public/fonts/README.md`.
+  - Primer preset Framer Motion en `src/lib/animations/constants.ts`: `pageTransition`.
 - **Archivos principales impactados**:
   - `package.json`
   - `pnpm-lock.yaml`
   - `src/lib/utils.ts`
-  - `tailwind.config.ts`
   - `src/app/globals.css`
-- **Rama de trabajo**:
+  - `src/providers/ThemeProvider.tsx`
+  - `src/app/layout.tsx`
+  - `tailwind.config.ts`
+  - `public/fonts/README.md`
+  - `src/lib/animations/constants.ts`
+  - `bitacora.md`
+- **Ramas de trabajo**:
   - `config/M02-tailwind-tokens`
+  - `feat/M02-theme-provider`
+  - `config/M02-framer-presets`
 - **Notas**:
-  - Este bloque reemplaza el detalle individual de M02-001 a M02-021b para mantener `bitacora.md` ligero.
+  - Este bloque reemplaza el detalle individual de M02-001 a M02-024 para mantener `bitacora.md` ligero.
 
-## [M02-022] — Crear src/providers/ThemeProvider.tsx
+## [M02-025 | M02-026 | M02-027] — Presets buttonPress, cardHover y taskComplete
 - **Fecha:** 2026-04-11
 - **Módulo:** 02 — Design System & Componentes UI
 - **Tipo:** CODE
-- **Archivos:**
-  - Creados: src/providers/ThemeProvider.tsx
-  - Modificados: bitacora.md
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M02-022): create ThemeProvider with dark/light mode toggle and localStorage persistence`
-- **Rama:** feat/M02-theme-provider
-- **Notas:** Ninguna
-
-## [M02-023a | M02-023aa] — Configurar fuentes next/font en root layout | Documentar estrategia de fuentes
-- **Fecha:** 2026-04-11
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** CODE | SETUP
-- **Archivos:**
-  - Creados: public/fonts/README.md
-  - Modificados: src/app/layout.tsx, bitacora.md
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M02-023a,M02-023aa): configure next/font google fonts and document strategy`
-- **Rama:** feat/M02-theme-provider
-- **Notas:** Ninguna
-
-## [M02-023b | M02-023c] — Integrar ThemeProvider en root layout + Configurar darkMode class-based en tailwind.config.ts
-- **Fecha:** 2026-04-11
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** CODE | CONFIG
 - **Archivos:**
   - Creados: Ninguno
-  - Modificados: src/app/layout.tsx, tailwind.config.ts, bitacora.md
+  - Modificados: src/lib/animations/constants.ts, bitacora.md
 - **Score auditoría:** 100%
 - **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M02-023b,M02-023c): integrate ThemeProvider in root layout and configure Tailwind darkMode class strategy`
-- **Rama:** feat/M02-theme-provider
-- **Notas:** Ninguna
-
-## [M02-024] — Crear src/lib/animations/constants.ts — pageTransition
-- **Fecha:** 2026-04-11
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** CODE
-- **Archivos:**
-  - Creados: src/lib/animations/constants.ts
-  - Modificados: bitacora.md
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
-- **Commit:** `feat(M02-024): add pageTransition Framer Motion preset`
+- **Commit:** `feat(M02-025,M02-026,M02-027): add buttonPress, cardHover, taskComplete animation presets`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
