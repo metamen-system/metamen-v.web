@@ -237,3 +237,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-038): add navigation constants with navItems and NavItem type`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-039] — Crear src/components/ui/Button.tsx
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/Button.tsx
+  - Modificados: bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-039): create Button component with CVA variants and Framer Motion`
+- **Rama:** feat/M02-ui-atoms
+- **Notas:** Ninguna
