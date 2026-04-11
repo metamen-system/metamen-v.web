@@ -36,3 +36,36 @@ export const taskComplete = {
   },
   transition: { duration: 0.4 },
 } as const;
+
+// BTC gain float toast — rises 60px, scales up, fades out in 1.2s
+export const btcGainFloat = {
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 0, y: -60, scale: [1, 1.3, 1] },
+  transition: { duration: 1.2 },
+} as const;
+
+// Heart loss — horizontal shake with red-to-gray color transition
+export const heartLoss = {
+  animate: {
+    scale: [1, 1.3, 0.8, 1],
+    x: [-6, 6, -4, 4, 0],
+    fill: ['#FF0000', '#FF0000', '#808080'],
+  },
+  transition: { duration: 0.5 },
+} as const;
+
+// Avatar death — progressive desaturation, shrink, and fade
+export const avatarDeath = {
+  animate: {
+    filter: ['grayscale(0%)', 'grayscale(50%)', 'grayscale(100%)'],
+    scale: [1, 0.95, 0.85],
+    opacity: [1, 0.9, 0.7],
+  },
+  transition: { duration: 2, ease: 'easeIn' as const },
+} as const;
+
+// Idle breathing — subtle vertical bob, infinite loop
+export const idleBreathing = {
+  animate: { y: [0, -4, 0] },
+  transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const },
+} as const;

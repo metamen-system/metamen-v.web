@@ -133,3 +133,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-025,M02-026,M02-027): add buttonPress, cardHover, taskComplete animation presets`
 - **Rama:** config/M02-framer-presets
 - **Notas:** Ninguna
+
+## [M02-028 | M02-029 | M02-030 | M02-031] — Presets btcGainFloat, heartLoss, avatarDeath e idleBreathing
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/lib/animations/constants.ts, bitacora.md
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA)
+- **Commit:** `feat(M02-028..031): add btcGainFloat, heartLoss, avatarDeath, idleBreathing animation presets`
+- **Rama:** config/M02-framer-presets
+- **Notas:** Ninguna
