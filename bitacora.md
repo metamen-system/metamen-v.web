@@ -163,3 +163,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-058..061c): add SkeletonLoader with Avatar, Card, Bar, Text variants and compound export`
 - **Rama:** feat/M02-modal-system
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-062] — Crear src/components/ui/FocusTrap.tsx
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/FocusTrap.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-062): create FocusTrap component for WCAG 2.1 AA keyboard accessibility`
+- **Rama:** feat/M02-a11y-states
+- **Notas:** PRIMERA AUDITORÍA
