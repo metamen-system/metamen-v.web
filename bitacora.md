@@ -176,3 +176,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-062): create FocusTrap component for WCAG 2.1 AA keyboard accessibility`
 - **Rama:** feat/M02-a11y-states
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-065a | M02-065b | M02-065c] — Componentes 5-state pattern (BlankState, LoadingState, ErrorState)
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/BlankState.tsx, src/components/ui/LoadingState.tsx, src/components/ui/ErrorState.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-065): add BlankState, LoadingState, ErrorState 5-state pattern components`
+- **Rama:** feat/M02-a11y-states
+- **Notas:** REAUDITORÍA CICLO 1
