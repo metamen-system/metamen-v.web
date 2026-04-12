@@ -137,3 +137,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-053,M02-054,M02-055): integrate Toaster in root layout, create LongPressButton with motion values and pointer handlers`
 - **Rama:** feat/M02-modal-system
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-056 | M02-057] — Barra de progreso visual + Vibraciones por hito en LongPressButton
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/components/ui/LongPressButton.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-056|M02-057): add visual progress bar and milestone vibrations to LongPressButton`
+- **Rama:** feat/M02-modal-system
+- **Notas:** REAUDITORÍA CICLO 1

@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import { useHapticFeedback, VIBRATE } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
@@ -30,21 +30,25 @@ function LongPressButton({
   label,
   holdingLabel,
   onComplete,
-  variant = 'danger',
+  variant = 'gold',
   disabled = false,
   className,
 }: LongPressButtonProps) {
   const progress = useMotionValue(0);
   const springProgress = useSpring(progress, { stiffness: 200, damping: 30 });
+  const progressWidth = useTransform(springProgress, (v) => `${v * 100}%`);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const milestonesHit = useRef<Set<number>>(new Set());
+  const [isHolding, setIsHolding] = useState(false);
   const { vibrate } = useHapticFeedback();
-
-  const getHoldingLabel = useCallback(() => holdingLabel ?? label, [holdingLabel, label]);
 
   const startHold = useCallback(() => {
     if (disabled) {
       return;
     }
+
+    setIsHolding(true);
+    milestonesHit.current = new Set();
 
     const startTime = Date.now();
 
@@ -54,13 +58,30 @@ function LongPressButton({
 
       progress.set(p);
 
+      // Milestone vibrations
+      if (p >= 0.25 && !milestonesHit.current.has(25)) {
+        vibrate(VIBRATE.impactLight);
+        milestonesHit.current.add(25);
+      }
+
+      if (p >= 0.5 && !milestonesHit.current.has(50)) {
+        vibrate(VIBRATE.impactMedium);
+        milestonesHit.current.add(50);
+      }
+
+      if (p >= 0.75 && !milestonesHit.current.has(75)) {
+        vibrate(VIBRATE.impactHeavy);
+        milestonesHit.current.add(75);
+      }
+
       if (p >= 1) {
+        vibrate([100, 50, 100]);
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
         onComplete();
       }
     }, 16);
-  }, [disabled, duration, progress, onComplete]);
+  }, [disabled, duration, onComplete, progress, vibrate]);
 
   const cancelHold = useCallback(() => {
     if (intervalRef.current) {
@@ -68,25 +89,10 @@ function LongPressButton({
       intervalRef.current = null;
     }
 
+    setIsHolding(false);
+    milestonesHit.current = new Set();
     progress.set(0);
   }, [progress]);
-
-  useEffect(() => {
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-    };
-  }, []);
-
-  // These values are initialized here so later tasks can wire handlers and UI without changing state setup.
-  const motionReady =
-    typeof motion.div === 'function' &&
-    typeof AnimatePresence === 'function' &&
-    typeof vibrate === 'function' &&
-    VIBRATE.impactMedium.length > 0 &&
-    typeof onComplete === 'function';
 
   return (
     <div
@@ -94,17 +100,26 @@ function LongPressButton({
       onPointerUp={cancelHold}
       onPointerLeave={cancelHold}
       onPointerCancel={cancelHold}
-      className={cn('relative h-16 rounded-xl overflow-hidden touch-none select-none', className)}
+      className={cn(
+        'relative h-16 rounded-xl overflow-hidden cursor-pointer select-none touch-none',
+        'bg-bg-elevated',
+        disabled && 'opacity-50 cursor-not-allowed',
+        className,
+      )}
       aria-disabled={disabled}
-      data-duration={duration}
-      data-variant={variant}
-      data-holding-label={getHoldingLabel()}
-      data-progress={progress.get()}
-      data-spring-progress={springProgress.get()}
-      data-interval-active={intervalRef.current === null ? 'false' : 'true'}
-      data-motion-ready={motionReady ? 'true' : 'false'}
     >
-      {label}
+      {/* Progress bar fill */}
+      <motion.div
+        style={{ width: progressWidth }}
+        className={cn('absolute inset-0', variant === 'danger' ? 'gradient-cta' : 'gradient-gold')}
+      />
+
+      {/* Label text */}
+      <div className="relative z-10 flex h-full items-center justify-center">
+        <span className="font-semibold text-headline">
+          {isHolding ? (holdingLabel ?? label) : label}
+        </span>
+      </div>
     </div>
   );
 }
