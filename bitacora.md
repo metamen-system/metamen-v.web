@@ -189,3 +189,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-065): add BlankState, LoadingState, ErrorState 5-state pattern components`
 - **Rama:** feat/M02-a11y-states
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-066] — Crear src/components/ui/OfflineBanner.tsx
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/OfflineBanner.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-066): create OfflineBanner component with offline detection`
+- **Rama:** feat/M02-a11y-states
+- **Notas:** PRIMERA AUDITORÍA
