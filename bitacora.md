@@ -150,3 +150,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-056|M02-057): add visual progress bar and milestone vibrations to LongPressButton`
 - **Rama:** feat/M02-modal-system
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-058 | M02-059 | M02-060 | M02-061a | M02-061b | M02-061c] — SkeletonLoader base + variantes (Avatar, Card, Bar, Text) + export compuesto
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/SkeletonLoader.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-058..061c): add SkeletonLoader with Avatar, Card, Bar, Text variants and compound export`
+- **Rama:** feat/M02-modal-system
+- **Notas:** REAUDITORÍA CICLO 1
