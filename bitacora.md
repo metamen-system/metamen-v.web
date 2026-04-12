@@ -202,3 +202,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-066): create OfflineBanner component with offline detection`
 - **Rama:** feat/M02-a11y-states
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-067] — Crear src/components/ui/LottiePlayer.tsx
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/LottiePlayer.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-067): add LottiePlayer wrapper with reduced motion support`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** REAUDITORÍA CICLO 1
