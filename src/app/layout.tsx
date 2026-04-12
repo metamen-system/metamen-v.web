@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
+import Toaster from '@/components/ui/Toaster';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 
 const inter = Inter({
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           {children}
           <ServiceWorkerRegistration />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

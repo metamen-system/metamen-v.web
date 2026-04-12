@@ -16,8 +16,8 @@
 | --- | --- |
 | Fase actual | M02 en progreso (Modal System iniciado) |
 | Módulo en curso | **M02: Design System & Componentes UI** |
-| Última tarea completada | `M02-050 | M02-051 | M02-052` — Sistema de Toasts (Store + Componente + Contenedor) |
-| Próxima tarea | `M02-053` — Integrar Toaster en root layout.tsx |
+| Última tarea completada | `M02-053 | M02-054 | M02-055` — Integración de Toaster + LongPressButton setup + pointer handlers |
+| Próxima tarea | `M02-056` — Reemplazar placeholder de LongPressButton con barra de progreso visual |
 | Bloqueadores | Ninguno |
 | Fecha inicio proyecto | 2026-02-21 |
 | Branch | feat/M02-modal-system |
@@ -26,7 +26,7 @@
 
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
-M02: Design System               [████░░░░░░] 52/108
+M02: Design System               [█████░░░░░] 55/108
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
@@ -51,7 +51,7 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 
 ## REGISTRO DE TAREAS COMPLETADAS
 
-- **Total actual**: 160 tareas completadas.
+- **Total actual**: 163 tareas completadas.
 
 ### BLOQUE CONSOLIDADO M01-001 a M01-110 (MODULO 01)
 
@@ -124,3 +124,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-050|051|052): implement toast system with Zustand store, Toast component, and Toaster container`
 - **Rama:** feat/M02-modal-system
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-053 | M02-054 | M02-055] — Integrar Toaster en layout + setup de LongPressButton + pointer handlers
+- **Fecha:** 2026-04-11
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/LongPressButton.tsx
+  - Modificados: src/app/layout.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-053,M02-054,M02-055): integrate Toaster in root layout, create LongPressButton with motion values and pointer handlers`
+- **Rama:** feat/M02-modal-system
+- **Notas:** REAUDITORÍA CICLO 1
