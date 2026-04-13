@@ -306,3 +306,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-073): create MainLayout responsive component with sidebar and bottom nav`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-074] — Actualizar layout del dashboard para usar MainLayout
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/app/dashboard/layout.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 3
+- **Commit:** `feat(M02-074): integrate MainLayout into dashboard layout`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** REAUDITORÍA CICLO 3. Ruta corregida de `(dashboard)` a `dashboard` por discrepancia entre M02-074 spec y M01-022 implementación real.
