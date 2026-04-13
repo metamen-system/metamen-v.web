@@ -371,3 +371,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-077,M02-078): add barrel exports for providers and hooks`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-080] — Verificar Button renderiza los 5 variants sin errores
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
+  - Modificados: Ninguno (archivo temporal eliminado post-verificación)
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
+- **Commit:** `feat(M02-080): verify Button renders all 5 variants without errors`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** URL corregida a `/ui-test` por comportamiento de Route Groups en Next.js App Router; limpieza de `.next/types` aplicada post-eliminación.
