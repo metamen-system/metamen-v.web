@@ -215,3 +215,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-067): add LottiePlayer wrapper with reduced motion support`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-068a | M02-068b | M02-068c | M02-068d | M02-068e] — Placeholders Lottie (death, resurrection, heart_break, judgement_success, judgement_failure)
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: public/animations/death.json, public/animations/resurrection.json, public/animations/heart_break.json, public/animations/judgement_success.json, public/animations/judgement_failure.json
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-068a-e): add placeholder Lottie animations for death, resurrection, heart_break, judgement_success, judgement_failure`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** REAUDITORÍA CICLO 1
