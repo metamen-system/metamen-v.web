@@ -254,3 +254,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-069): create accessible Icon.tsx wrapper for lucide-react`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-070] — Crear src/components/layout/Sidebar.tsx
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/layout/Sidebar.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 2
+- **Commit:** `feat(M02-070): create Sidebar layout component with collapsed/expanded states`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** REAUDITORÍA CICLO 1
