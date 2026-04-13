@@ -241,3 +241,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-068f..j): add lottie placeholders for progression and protocol events`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-069] — Crear src/components/ui/Icon.tsx wrapper accesible
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/Icon.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-069): create accessible Icon.tsx wrapper for lucide-react`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
