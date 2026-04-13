@@ -228,3 +228,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-068a-e): add placeholder Lottie animations for death, resurrection, heart_break, judgement_success, judgement_failure`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** REAUDITORÍA CICLO 1
+
+## [M02-068f | M02-068g | M02-068h | M02-068i | M02-068j] — Crear placeholders Lottie: level_up, contract_seal, penalty_seal, streak_fire, protocol_complete
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** SETUP
+- **Archivos:**
+  - Creados: public/animations/level_up.json, public/animations/contract_seal.json, public/animations/penalty_seal.json, public/animations/streak_fire.json, public/animations/protocol_complete.json
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-068f..j): add lottie placeholders for progression and protocol events`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
