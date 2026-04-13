@@ -319,3 +319,29 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-074): integrate MainLayout into dashboard layout`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** REAUDITORÍA CICLO 3. Ruta corregida de `(dashboard)` a `dashboard` por discrepancia entre M02-074 spec y M01-022 implementación real.
+
+## [M02-075] — Crear barrel export src/components/ui/index.ts
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/ui/index.ts
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-075,M02-076): add barrel exports for ui and layout components`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
+
+## [M02-076] — Crear barrel export src/components/layout/index.ts
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/layout/index.ts
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-075,M02-076): add barrel exports for ui and layout components`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
