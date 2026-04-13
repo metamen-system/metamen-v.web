@@ -384,3 +384,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-080): verify Button renders all 5 variants without errors`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** URL corregida a `/ui-test` por comportamiento de Route Groups en Next.js App Router; limpieza de `.next/types` aplicada post-eliminación.
+
+## [M02-081] — Verificar LongPressButton completa en 3000ms ± 100ms
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
+  - Modificados: Ninguno (src/components/ui/LongPressButton.tsx verificado sin cambios)
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-081): verify LongPressButton 3000ms timing compliance`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** Timing validado en navegador real: 3026ms (rango esperado 2900–3100ms); callback no se ejecuta en release prematuro; barra reinicia a 0%.
