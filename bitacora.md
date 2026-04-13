@@ -280,3 +280,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-071): create BottomNav mobile navigation component with 5 tabs`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-072] — Crear src/components/layout/MobileHeader.tsx
+- **Fecha:** 2026-04-12
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: src/components/layout/MobileHeader.tsx
+  - Modificados: Ninguno
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-072): create MobileHeader layout component with hamburger menu, logo, and notification bell`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
