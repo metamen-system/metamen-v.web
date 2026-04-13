@@ -345,3 +345,29 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-075,M02-076): add barrel exports for ui and layout components`
 - **Rama:** setup/M02-lottie-assets
 - **Notas:** PRIMERA AUDITORÍA
+
+## [M02-077] — Actualizar src/providers/index.ts con ThemeProvider
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/providers/index.ts
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-077,M02-078): add barrel exports for providers and hooks`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
+
+## [M02-078] — Actualizar src/hooks/index.ts con todos los hooks nuevos
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CODE
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/hooks/index.ts
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `feat(M02-077,M02-078): add barrel exports for providers and hooks`
+- **Rama:** setup/M02-lottie-assets
+- **Notas:** PRIMERA AUDITORÍA
