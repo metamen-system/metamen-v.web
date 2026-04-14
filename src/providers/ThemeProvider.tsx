@@ -21,10 +21,6 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
         return storedTheme;
       }
 
-      if (window.matchMedia) {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-
       return 'dark';
     } catch {
       return 'dark';

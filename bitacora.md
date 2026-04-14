@@ -410,3 +410,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `test(M02-082): verify Modal focus trap keyboard accessibility`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** Focus trap verificado con Tab/Shift+Tab (>=10 iteraciones), Escape funcional, ARIA válido, limpieza de archivo temporal y artefactos `.next/types` post-verificación.
+
+## [M02-084 | M02-085] — Auditoría combinada layout responsive + persistencia dark mode
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/providers/ThemeProvider.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `verify(M02-084,M02-085): responsive layout viewports and dark mode persistence`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** PRIMERA AUDITORÍA. Archivos verificados: src/components/layout/MainLayout.tsx, src/components/layout/Sidebar.tsx, src/components/layout/BottomNav.tsx, src/components/layout/MobileHeader.tsx, src/providers/ThemeProvider.tsx.
