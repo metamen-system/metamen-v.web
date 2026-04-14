@@ -10,6 +10,14 @@ export const pageTransition = {
   transition: { duration: 0.2, ease: 'easeOut' },
 } as const;
 
+// Reduced motion variant for WCAG 2.1 AA compliance.
+export const pageTransitionReduced = {
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 1, y: 0 },
+  transition: { duration: 0 },
+} as const;
+
 // Button press interaction preset (M02-025)
 export const buttonPress = {
   whileHover: { scale: 1.02, y: -1 },
@@ -68,4 +76,66 @@ export const avatarDeath = {
 export const idleBreathing = {
   animate: { y: [0, -4, 0] },
   transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const },
+} as const;
+
+// ═══════════════════════════════════════════════════
+// REDUCED MOTION VARIANTS (WCAG 2.1 AA)
+// Used when useReducedMotion() returns true.
+// All animations are instant (duration: 0) or disabled.
+// ═══════════════════════════════════════════════════
+
+// Button press — no hover/tap animation
+export const buttonPressReduced = {
+  whileHover: {},
+  whileTap: {},
+  transition: { duration: 0 },
+} as const;
+
+// Card hover — no hover/tap animation
+export const cardHoverReduced = {
+  whileHover: {},
+  whileTap: {},
+  transition: { duration: 0 },
+} as const;
+
+// Task completion — instant state change, no keyframe sequence
+export const taskCompleteReduced = {
+  animate: {
+    scale: 1,
+    borderColor: '#00FF88',
+  },
+  transition: { duration: 0 },
+} as const;
+
+// BTC gain float — instant disappear, no float/scale
+export const btcGainFloatReduced = {
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 0, y: 0, scale: 1 },
+  transition: { duration: 0.1 },
+} as const;
+
+// Heart loss — instant color change, no shake
+export const heartLossReduced = {
+  animate: {
+    scale: 1,
+    x: 0,
+    fill: '#808080',
+  },
+  transition: { duration: 0 },
+} as const;
+
+// Avatar death — instant grayscale, no progressive sequence
+export const avatarDeathReduced = {
+  animate: {
+    filter: 'grayscale(100%)',
+    scale: 0.85,
+    opacity: 0.7,
+  },
+  transition: { duration: 0 },
+} as const;
+
+// Idle breathing — static, no movement
+export const idleBreathingReduced = {
+  animate: { y: 0 },
+  transition: { duration: 0 },
 } as const;

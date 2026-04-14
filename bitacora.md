@@ -423,3 +423,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `verify(M02-084,M02-085): responsive layout viewports and dark mode persistence`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** PRIMERA AUDITORÍA. Archivos verificados: src/components/layout/MainLayout.tsx, src/components/layout/Sidebar.tsx, src/components/layout/BottomNav.tsx, src/components/layout/MobileHeader.tsx, src/providers/ThemeProvider.tsx.
+
+## [M02-086] — Verificar reduced motion deshabilita animaciones
+- **Fecha:** 2026-04-14
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** CORRECCIÓN POST-AUDITORÍA
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/components/ui/LottiePlayer.tsx, src/app/template.tsx, src/lib/animations/constants.ts, src/lib/animations/index.ts, src/components/ui/Toast.tsx, src/components/ui/Modal.tsx, src/components/ui/LongPressButton.tsx, src/components/ui/__tests__/Modal.test.tsx, public/animations/streak_fire.json, src/app/(dashboard)/ui-test/page.tsx
+- **Score auditoría:** pendiente re-auditoría final
+- **Ciclos de auditoría:** 2 (post-corrección en curso)
+- **Commit:** `fix(M02-086): enforce reduced motion across all motion.* components (WCAG 2.1 AA)`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** Se corrigió reactividad de LottiePlayer para reanudar animación al cambiar reduced motion de true a false sin remount.

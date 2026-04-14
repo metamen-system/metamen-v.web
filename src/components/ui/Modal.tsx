@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useReducedMotion } from '@/hooks/useReducedMotion';
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -31,6 +33,18 @@ const panelVariants = {
   exit: { opacity: 0, scale: 0.95 },
 } as const;
 
+const overlayVariantsReduced = {
+  initial: { opacity: 1 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+} as const;
+
+const panelVariantsReduced = {
+  initial: { opacity: 1, scale: 1 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 1 },
+} as const;
+
 const transition = { duration: 0.2 } as const;
 const FOCUSABLE_SELECTOR = [
   'a[href]:not([disabled]):not([tabindex="-1"])',
@@ -44,6 +58,7 @@ const FOCUSABLE_SELECTOR = [
 
 function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalProps) {
   const [mounted, setMounted] = useState(false);
+  const reducedMotion = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocusedElementRef = useRef<HTMLElement | null>(null);
   const lastFocusedOutsideRef = useRef<HTMLElement | null>(null);
@@ -65,6 +80,10 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
     );
   }, []);
 
+  const activeOverlayVariants = reducedMotion ? overlayVariantsReduced : overlayVariants;
+  const activePanelVariants = reducedMotion ? panelVariantsReduced : panelVariants;
+  const activeTransition = reducedMotion ? { duration: 0 } : transition;
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -85,7 +104,7 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
     return () => {
       document.removeEventListener('focusin', handleFocusIn);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -233,13 +252,21 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
       return;
     }
 
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleEscapeKey);
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!mounted) {
     return null;
@@ -262,11 +289,11 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
       {isOpen ? (
         <motion.div
           className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
-          variants={overlayVariants}
+          variants={activeOverlayVariants}
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={transition}
+          transition={activeTransition}
           onClick={onClose}
         >
           <motion.div
@@ -277,11 +304,11 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
             tabIndex={-1}
             onKeyDown={handleKeyDown}
             className={`bg-bg-card rounded-2xl shadow-xl w-full ${sizeClasses[size]}`}
-            variants={panelVariants}
+            variants={activePanelVariants}
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={transition}
+            transition={activeTransition}
             onClick={(event) => event.stopPropagation()}
           >
             {title ? (
