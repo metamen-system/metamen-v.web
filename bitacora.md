@@ -397,3 +397,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `feat(M02-081): verify LongPressButton 3000ms timing compliance`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** Timing validado en navegador real: 3026ms (rango esperado 2900–3100ms); callback no se ejecuta en release prematuro; barra reinicia a 0%.
+
+## [M02-082] — Verificar Modal focus trap funciona con teclado
+- **Fecha:** 2026-04-13
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
+  - Modificados: src/components/ui/Modal.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
+- **Commit:** `test(M02-082): verify Modal focus trap keyboard accessibility`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** Focus trap verificado con Tab/Shift+Tab (>=10 iteraciones), Escape funcional, ARIA válido, limpieza de archivo temporal y artefactos `.next/types` post-verificación.
