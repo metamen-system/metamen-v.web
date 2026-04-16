@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -60,6 +60,7 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
   const [mounted, setMounted] = useState(false);
   const reducedMotion = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
   const previousFocusedElementRef = useRef<HTMLElement | null>(null);
   const lastFocusedOutsideRef = useRef<HTMLElement | null>(null);
   const previousFocusedSnapshotRef = useRef<{
@@ -179,14 +180,26 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
 
     const focusFirstAvailableElement = () => {
       const focusableElements = getFocusableElements();
-      const firstElement = focusableElements[0];
-
-      if (firstElement) {
-        firstElement.focus();
+      if (focusableElements.length === 0) {
+        panelRef.current?.focus();
         return;
       }
 
-      panelRef.current?.focus();
+      // WCAG: Prioritize first content element that is not the close button.
+      const contentElement = focusableElements.find(
+        (el) =>
+          el.getAttribute('aria-label') !== 'Cerrar modal' &&
+          el.closest('[role="dialog"]') !== null,
+      );
+
+      if (contentElement) {
+        contentElement.focus();
+        return;
+      }
+
+      // Fallback: if only the close button is focusable, use it.
+      const fallbackElement = focusableElements[0];
+      fallbackElement?.focus();
     };
 
     const timeoutId = window.setTimeout(focusFirstAvailableElement, 0);
@@ -252,21 +265,13 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
       return;
     }
 
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
-
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', handleEscapeKey);
 
     return () => {
       document.body.style.overflow = originalOverflow;
-      window.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   if (!mounted) {
     return null;
@@ -275,7 +280,6 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
   const closeButton = (
     <button
       type="button"
-      autoFocus
       onClick={onClose}
       className="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
       aria-label="Cerrar modal"
@@ -300,7 +304,7 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-labelledby={title ? 'modal-title' : undefined}
+            aria-labelledby={title ? titleId : undefined}
             tabIndex={-1}
             onKeyDown={handleKeyDown}
             className={`bg-bg-card rounded-2xl shadow-xl w-full ${sizeClasses[size]}`}
@@ -313,7 +317,7 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
           >
             {title ? (
               <div className="flex items-center justify-between p-6 pb-0">
-                <h2 id="modal-title" className="text-lg font-semibold text-text-primary">
+                <h2 id={titleId} className="text-lg font-semibold text-text-primary">
                   {title}
                 </h2>
                 {closeButton}

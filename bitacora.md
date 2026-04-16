@@ -485,3 +485,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - Archivos verificados: src/components/ui/LongPressButton.tsx, src/hooks/useHapticFeedback.ts (no modificados)
 - Rama: tooling/M02-qa-integration
 - Nota: Ruta de test corregida a src/app/dashboard/ (sin paréntesis). Timing medido: 3003ms, 3009ms, 3009ms.
+
+## M02-082
+
+- Tarea: M02-082
+- Título: Verificar Modal focus trap funciona con teclado
+- Fecha completación: 2026-04-16
+- Score auditoría: 100%
+- Tipo de aprobación: AUDITORÍA POST-CORRECCIÓN CICLO 1
+- Archivos modificados: src/components/ui/Modal.tsx (3 correcciones SSOT)
+- Correcciones aplicadas: doble Escape, foco inicial, id estático
+- Rama: tooling/M02-qa-integration
