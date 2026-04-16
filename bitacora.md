@@ -436,3 +436,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `fix(M02-086): enforce reduced motion across all motion.* components (WCAG 2.1 AA)`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** Se corrigió reactividad de LottiePlayer para reanudar animación al cambiar reduced motion de true a false sin remount.
+
+## [M02-085] — Verificar dark mode persiste tras refresh + corrección anti-FOUC
+- **Fecha:** 2026-04-15
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: src/app/layout.tsx
+- **Score auditoría:** 100%
+- **Ciclos de auditoría:** 1 (PRIMERA AUDITORÍA post-corrección ciclo 1)
+- **Commit:** `fix(M02-085): add anti-FOUC inline script for theme persistence`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** Se detectó FOUC en verificación inicial. Se inyectó script inline anti-FOUC en `<head>` de layout.tsx, se removió clase `dark` hardcodeada y se agregó `suppressHydrationWarning`.
