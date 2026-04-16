@@ -474,3 +474,14 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - Archivos limpiados: src/app/(dashboard)/ui-test/page.tsx (eliminado — ruta errónea primer intento)
 - Rama: tooling/M02-qa-integration
 - Nota: Corrección de ruta aplicada (proyecto usa src/app/dashboard/ sin paréntesis)
+
+## M02-081
+
+- Tarea: M02-081
+- Título: Verificar LongPressButton completa en 3000ms ± 100ms
+- Fecha completación: 2026-04-15
+- Score auditoría: 100%
+- Tipo de aprobación: REAUDITORÍA CICLO 1
+- Archivos verificados: src/components/ui/LongPressButton.tsx, src/hooks/useHapticFeedback.ts (no modificados)
+- Rama: tooling/M02-qa-integration
+- Nota: Ruta de test corregida a src/app/dashboard/ (sin paréntesis). Timing medido: 3003ms, 3009ms, 3009ms.
