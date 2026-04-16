@@ -36,7 +36,6 @@ export function Toast({ toast }: ToastProps) {
       layout={!reducedMotion}
       initial={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       animate={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
-      exit={reducedMotion ? { opacity: 0 } : { opacity: 0, x: 100 }}
       transition={reducedMotion ? { duration: 0 } : { duration: 0.3 }}
       className="bg-bg-elevated border-l-4 rounded-xl shadow-lg p-4 flex items-start gap-3 min-w-[300px] max-w-[400px]"
       style={{ borderLeftColor: color }}
