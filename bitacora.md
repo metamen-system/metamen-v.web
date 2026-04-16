@@ -462,3 +462,15 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `fix(M02-079): correct rarity-common token to match SSOT #95A5A6`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** REAUDITORÍA CICLO 1. Corrección aplicada: `rarity-common` cambiado de `transparent` a `#95A5A6` (SSOT §8.7). Archivos auditados: `tailwind.config.ts`, `.next/static/css/*.css`.
+
+## M02-080
+
+- Tarea: M02-080
+- Título: Verificar Button renderiza los 5 variants sin errores
+- Fecha completación: 2026-04-15
+- Score auditoría: 100%
+- Tipo de aprobación: REAUDITORÍA CICLO 1
+- Archivos verificados: src/components/ui/Button.tsx (no modificado)
+- Archivos limpiados: src/app/(dashboard)/ui-test/page.tsx (eliminado — ruta errónea primer intento)
+- Rama: tooling/M02-qa-integration
+- Nota: Corrección de ruta aplicada (proyecto usa src/app/dashboard/ sin paréntesis)
