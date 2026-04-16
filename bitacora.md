@@ -449,3 +449,16 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Commit:** `fix(M02-085): add anti-FOUC inline script for theme persistence`
 - **Rama:** tooling/M02-qa-integration
 - **Notas:** Se detectó FOUC en verificación inicial. Se inyectó script inline anti-FOUC en `<head>` de layout.tsx, se removió clase `dark` hardcodeada y se agregó `suppressHydrationWarning`.
+
+## [M02-079] — Verificar tokens de color en Tailwind compilados
+- **Fecha:** 2026-04-15
+- **Módulo:** 02 — Design System & Componentes UI
+- **Tipo:** VERIFICACIÓN
+- **Archivos:**
+  - Creados: Ninguno
+  - Modificados: tailwind.config.ts
+- **Score auditoría:** 100% (post-corrección ciclo 1)
+- **Ciclos de auditoría:** 2
+- **Commit:** `fix(M02-079): correct rarity-common token to match SSOT #95A5A6`
+- **Rama:** tooling/M02-qa-integration
+- **Notas:** REAUDITORÍA CICLO 1. Corrección aplicada: `rarity-common` cambiado de `transparent` a `#95A5A6` (SSOT §8.7). Archivos auditados: `tailwind.config.ts`, `.next/static/css/*.css`.
