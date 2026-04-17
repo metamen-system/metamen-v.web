@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-[#0A0A0A] text-white min-h-screen antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-white dark:bg-bg-base text-text-inverse dark:text-text-primary min-h-screen antialiased`}
       >
         <ThemeProvider>
           {children}
