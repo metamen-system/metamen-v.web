@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Modal from '@/components/ui/Modal';
 
@@ -10,7 +10,32 @@ function getDialogFocusableElements(dialog: HTMLElement): HTMLElement[] {
   return Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
 }
 
+function markFocusableElementsAsVisible(elements: HTMLElement[]): void {
+  elements.forEach((element) => {
+    Object.defineProperty(element, 'offsetParent', {
+      configurable: true,
+      get: () => document.body,
+    });
+  });
+}
+
 describe('Modal', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: vi.fn().mockImplementation((query: string) => ({
+        matches: query === '(prefers-reduced-motion: reduce)' ? false : false,
+        media: query,
+        onchange: null,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+  });
+
   afterEach(() => {
     cleanup();
     vi.clearAllMocks();
@@ -39,7 +64,9 @@ describe('Modal', () => {
       throw new Error('Expected focusable elements inside modal');
     }
 
+    markFocusableElementsAsVisible(focusableElements);
     lastFocusable.focus();
+    expect(document.activeElement).toBe(lastFocusable);
     fireEvent.keyDown(dialog, { key: 'Tab' });
 
     expect(document.activeElement).toBe(firstFocusable);
@@ -68,7 +95,9 @@ describe('Modal', () => {
       throw new Error('Expected focusable elements inside modal');
     }
 
+    markFocusableElementsAsVisible(focusableElements);
     firstFocusable.focus();
+    expect(document.activeElement).toBe(firstFocusable);
     fireEvent.keyDown(dialog, { key: 'Tab', shiftKey: true });
 
     expect(document.activeElement).toBe(lastFocusable);

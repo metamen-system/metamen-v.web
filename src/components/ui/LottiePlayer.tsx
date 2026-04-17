@@ -39,10 +39,19 @@ export function LottiePlayer({
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (reducedMotion && lottieRef.current) {
-      lottieRef.current.goToAndStop(0, true);
+    if (!lottieRef.current) {
+      return;
     }
-  }, [reducedMotion]);
+
+    if (reducedMotion) {
+      lottieRef.current.goToAndStop(0, true);
+      return;
+    }
+
+    if (autoplay ?? true) {
+      lottieRef.current.play();
+    }
+  }, [autoplay, reducedMotion]);
 
   return (
     <Lottie

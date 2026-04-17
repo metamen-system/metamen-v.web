@@ -76,7 +76,7 @@ const config: Config = {
         'vector-ENV': '#1ABC9C',
 
         // --- M02-010: Rarity border colors (SSOT §8.7) ---
-        'rarity-common': 'transparent', // No visible border for common items
+        'rarity-common': '#95A5A6', // Common rarity color (SSOT §8.7)
         'rarity-rare': '#3498DB',
         'rarity-epic': '#9B59B6',
         'rarity-legendary': '#D4AF37',

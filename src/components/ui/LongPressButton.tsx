@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import { useHapticFeedback, VIBRATE } from '@/hooks/useHapticFeedback';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { cn } from '@/lib/utils';
 
 const LONG_PRESS_DURATION_MS = 3000;
@@ -34,8 +35,12 @@ function LongPressButton({
   disabled = false,
   className,
 }: LongPressButtonProps) {
+  const reducedMotion = useReducedMotion();
   const progress = useMotionValue(0);
-  const springProgress = useSpring(progress, { stiffness: 200, damping: 30 });
+  const springProgress = useSpring(progress, {
+    stiffness: reducedMotion ? 1000 : 200,
+    damping: reducedMotion ? 100 : 30,
+  });
   const progressWidth = useTransform(springProgress, (v) => `${v * 100}%`);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const milestonesHit = useRef<Set<number>>(new Set());

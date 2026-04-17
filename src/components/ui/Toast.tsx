@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { AlertTriangle, CheckCircle, Info, X, XCircle } from 'lucide-react';
 
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useToastStore } from '@/hooks/useToast';
 import type { Toast as ToastType } from '@/hooks/useToast';
 
@@ -26,16 +27,16 @@ interface ToastProps {
 
 export function Toast({ toast }: ToastProps) {
   const removeToast = useToastStore((state) => state.removeToast);
+  const reducedMotion = useReducedMotion();
   const Icon = TOAST_ICONS[toast.type];
   const color = TOAST_COLORS[toast.type];
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
-      transition={{ duration: 0.3 }}
+      layout={!reducedMotion}
+      initial={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+      animate={reducedMotion ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+      transition={reducedMotion ? { duration: 0 } : { duration: 0.3 }}
       className="bg-bg-elevated border-l-4 rounded-xl shadow-lg p-4 flex items-start gap-3 min-w-[300px] max-w-[400px]"
       style={{ borderLeftColor: color }}
       role="alert"

@@ -1,8 +1,10 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface ModalProps {
   isOpen: boolean;
@@ -31,54 +33,232 @@ const panelVariants = {
   exit: { opacity: 0, scale: 0.95 },
 } as const;
 
+const overlayVariantsReduced = {
+  initial: { opacity: 1 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+} as const;
+
+const panelVariantsReduced = {
+  initial: { opacity: 1, scale: 1 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 1 },
+} as const;
+
 const transition = { duration: 0.2 } as const;
-const FOCUSABLE_SELECTOR =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+const FOCUSABLE_SELECTOR = [
+  'a[href]:not([disabled]):not([tabindex="-1"])',
+  'button:not([disabled]):not([tabindex="-1"])',
+  'input:not([disabled]):not([tabindex="-1"])',
+  'textarea:not([disabled]):not([tabindex="-1"])',
+  'select:not([disabled]):not([tabindex="-1"])',
+  '[tabindex]:not([tabindex="-1"]):not([disabled])',
+  '[contenteditable="true"]',
+].join(', ');
 
 function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalProps) {
   const [mounted, setMounted] = useState(false);
+  const reducedMotion = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  const previousFocusedElementRef = useRef<HTMLElement | null>(null);
+  const lastFocusedOutsideRef = useRef<HTMLElement | null>(null);
+  const previousFocusedSnapshotRef = useRef<{
+    id: string | null;
+    tagName: string;
+    textContent: string | null;
+  } | null>(null);
+
+  const getFocusableElements = useCallback((): HTMLElement[] => {
+    const panel = panelRef.current;
+
+    if (!panel) {
+      return [];
+    }
+
+    return Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
+      (element) => element.offsetParent !== null,
+    );
+  }, []);
+
+  const activeOverlayVariants = reducedMotion ? overlayVariantsReduced : overlayVariants;
+  const activePanelVariants = reducedMotion ? panelVariantsReduced : panelVariants;
+  const activeTransition = reducedMotion ? { duration: 0 } : transition;
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    if (!isOpen) {
-      return;
-    }
+    function handleFocusIn(event: FocusEvent) {
+      if (isOpen) {
+        return;
+      }
 
-    // Save the previously focused element before opening.
-    const previousFocus = document.activeElement as HTMLElement | null;
-
-    // Focus modal panel after render.
-    setTimeout(() => {
-      panelRef.current?.focus();
-    }, 0);
-
-    return () => {
-      // Restore focus when modal closes.
-      previousFocus?.focus();
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (!isOpen) {
-      return;
-    }
-
-    function handleEscapeKey(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        onClose();
+      if (event.target instanceof HTMLElement) {
+        lastFocusedOutsideRef.current = event.target;
       }
     }
 
-    window.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener('focusin', handleFocusIn);
 
     return () => {
-      window.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('focusin', handleFocusIn);
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      const restorePreviousFocus = () => {
+        if (previousFocusedElementRef.current?.isConnected) {
+          previousFocusedElementRef.current.focus();
+          previousFocusedElementRef.current = null;
+          previousFocusedSnapshotRef.current = null;
+          return;
+        }
+
+        if (previousFocusedSnapshotRef.current) {
+          const { id, tagName, textContent } = previousFocusedSnapshotRef.current;
+          let fallbackElement: HTMLElement | null = null;
+
+          if (id) {
+            const elementById = document.getElementById(id);
+            fallbackElement = elementById instanceof HTMLElement ? elementById : null;
+          }
+
+          if (!fallbackElement && textContent) {
+            const candidates = Array.from(document.querySelectorAll<HTMLElement>(tagName)).filter(
+              (candidate) => candidate.textContent?.trim() === textContent,
+            );
+            fallbackElement =
+              candidates.find((candidate) => candidate.offsetParent !== null) ??
+              candidates[0] ??
+              null;
+          }
+
+          if (!fallbackElement) {
+            const focusableOutsideModal = Array.from(
+              document.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+            ).find((candidate) => candidate.offsetParent !== null);
+            fallbackElement = focusableOutsideModal ?? null;
+          }
+
+          fallbackElement?.focus();
+        }
+
+        previousFocusedElementRef.current = null;
+        previousFocusedSnapshotRef.current = null;
+      };
+
+      const timeoutId = window.setTimeout(restorePreviousFocus, 220);
+      const retryTimeoutId = window.setTimeout(restorePreviousFocus, 320);
+
+      return () => {
+        window.clearTimeout(timeoutId);
+        window.clearTimeout(retryTimeoutId);
+      };
+
+      return;
+    }
+
+    const activeElement =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+    if (activeElement && activeElement !== document.body) {
+      previousFocusedElementRef.current = activeElement;
+    } else {
+      previousFocusedElementRef.current = lastFocusedOutsideRef.current;
+    }
+
+    previousFocusedSnapshotRef.current = previousFocusedElementRef.current
+      ? {
+          id: previousFocusedElementRef.current.id || null,
+          tagName: previousFocusedElementRef.current.tagName.toLowerCase(),
+          textContent: previousFocusedElementRef.current.textContent?.trim() ?? null,
+        }
+      : null;
+
+    const focusFirstAvailableElement = () => {
+      const focusableElements = getFocusableElements();
+      if (focusableElements.length === 0) {
+        panelRef.current?.focus();
+        return;
+      }
+
+      // WCAG: Prioritize first content element that is not the close button.
+      const contentElement = focusableElements.find(
+        (el) =>
+          el.getAttribute('aria-label') !== 'Cerrar modal' &&
+          el.closest('[role="dialog"]') !== null,
+      );
+
+      if (contentElement) {
+        contentElement.focus();
+        return;
+      }
+
+      // Fallback: if only the close button is focusable, use it.
+      const fallbackElement = focusableElements[0];
+      fallbackElement?.focus();
+    };
+
+    const timeoutId = window.setTimeout(focusFirstAvailableElement, 0);
+    const retryTimeoutId = window.setTimeout(focusFirstAvailableElement, 50);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.clearTimeout(retryTimeoutId);
+    };
+  }, [getFocusableElements, isOpen]);
+
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'Escape') {
+        event.stopPropagation();
+        onClose();
+        return;
+      }
+
+      if (event.key !== 'Tab') {
+        return;
+      }
+
+      const focusableElements = getFocusableElements();
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        panelRef.current?.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!firstElement || !lastElement) {
+        event.preventDefault();
+        panelRef.current?.focus();
+        return;
+      }
+
+      const activeElement = document.activeElement;
+      const isOnPanel = activeElement === panelRef.current;
+
+      if (event.shiftKey) {
+        if (activeElement === firstElement || isOnPanel) {
+          event.preventDefault();
+          lastElement.focus();
+        }
+
+        return;
+      }
+
+      if (activeElement === lastElement || isOnPanel) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    },
+    [getFocusableElements, onClose],
+  );
 
   useEffect(() => {
     if (!isOpen) {
@@ -108,67 +288,36 @@ function Modal({ isOpen, onClose, title, children, footer, size = 'md' }: ModalP
     </button>
   );
 
-  function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
-    if (event.key !== 'Tab') {
-      return;
-    }
-
-    const focusableElements = panelRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
-
-    if (!focusableElements || focusableElements.length === 0) {
-      return;
-    }
-
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    if (!firstElement || !lastElement) {
-      return;
-    }
-
-    if (event.shiftKey) {
-      // Shift+Tab on first element should move focus to the last one.
-      if (document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      }
-    } else if (document.activeElement === lastElement) {
-      // Tab on last element should move focus to the first one.
-      event.preventDefault();
-      firstElement.focus();
-    }
-  }
-
   return createPortal(
     <AnimatePresence>
       {isOpen ? (
         <motion.div
           className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
-          variants={overlayVariants}
+          variants={activeOverlayVariants}
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={transition}
+          transition={activeTransition}
           onClick={onClose}
         >
           <motion.div
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-labelledby={title ? 'modal-title' : undefined}
+            aria-labelledby={title ? titleId : undefined}
             tabIndex={-1}
             onKeyDown={handleKeyDown}
             className={`bg-bg-card rounded-2xl shadow-xl w-full ${sizeClasses[size]}`}
-            variants={panelVariants}
+            variants={activePanelVariants}
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={transition}
+            transition={activeTransition}
             onClick={(event) => event.stopPropagation()}
           >
             {title ? (
               <div className="flex items-center justify-between p-6 pb-0">
-                <h2 id="modal-title" className="text-lg font-semibold text-text-primary">
+                <h2 id={titleId} className="text-lg font-semibold text-text-primary">
                   {title}
                 </h2>
                 {closeButton}
