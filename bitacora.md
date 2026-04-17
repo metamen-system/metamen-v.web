@@ -14,19 +14,19 @@
 
 | Campo | Valor |
 | --- | --- |
-| Fase actual | M02 en progreso (Modal System iniciado) |
+| Fase actual | M02 en progreso (QA Integration en curso) |
 | Módulo en curso | **M02: Design System & Componentes UI** |
-| Última tarea completada | `M02-053 | M02-054 | M02-055` — Integración de Toaster + LongPressButton setup + pointer handlers |
-| Próxima tarea | `M02-056` — Reemplazar placeholder de LongPressButton con barra de progreso visual |
+| Última tarea completada | `M02-086` — Verificar reduced motion deshabilita animaciones (aprobada tras corrección) |
+| Próxima tarea | `M02-087` — Verificar Lottie placeholders son JSON válidos |
 | Bloqueadores | Ninguno |
 | Fecha inicio proyecto | 2026-02-21 |
-| Branch | feat/M02-modal-system |
+| Branch | tooling/M02-qa-integration |
 
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
-M02: Design System               [████████░░] 83/108
+M02: Design System               [████████░░] 90/108
 M03: Base de Datos               [░░░░░░░░░░] 0/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
@@ -188,3 +188,11 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
     - Button spring restored: `true`
   - Cleanup: página temporal eliminada, `git diff` solo `template.tsx`
 - **Archivos modificados:** `src/app/template.tsx` (skip AnimatePresence + limpiar import)
+
+## [M02-087] — Verificar Lottie placeholders son JSON válidos
+- **Fecha completación:** 2026-04-17
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1 (corrección de streak_fire.json + validación con Node.js)
+- **Archivos modificados:** `public/animations/streak_fire.json` (corregido w/h/op/layers)
+- **Rama:** tooling/M02-qa-integration
+- **Nota:** `streak_fire.json` tenía `w=100`, `h=100`, `op=60`, `layers=[{shape}]` — corregido a placeholder estándar `512x512`
