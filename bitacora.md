@@ -169,3 +169,22 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Test 5: pnpm tsc + pnpm build
   - Test 6: Regresión layout M02-084 (375/768/1024px)
 - **Archivos modificados:** `src/app/layout.tsx` (1 línea, className del body)
+
+## [M02-086] — Verificar reduced motion deshabilita animaciones
+- **Fecha:** 2026-04-17
+- **Resultado:** ✅ APROBADA (tras corrección)
+- **Defecto encontrado:** `AnimatePresence mode="wait"` en `src/app/template.tsx` bloqueaba la navegación cuando `prefers-reduced-motion: reduce` estaba activo. La causa: `pageTransitionReduced` definía `initial/animate/exit` con valores idénticos (`opacity: 1`, `y: 0`), provocando que Framer Motion nunca completara la animación de exit, impidiendo el montaje del nuevo componente.
+- **Corrección aplicada:**
+  - Cuando `useReducedMotion()` retorna `true`, se renderiza `{children}` en un `<div>` plano, sin `AnimatePresence` ni `motion.div`.
+  - Eliminado import de `pageTransitionReduced` (ya no se usa).
+  - `AnimatePresence + pageTransition` solo se usan cuando reduced motion está OFF.
+- **Tests ejecutados:**
+  - Reduced motion ON:
+    - Navegación `/ui-test` → `/dashboard`: instantánea, `minOpacity=1`
+    - LottiePlayer: estático, `0 active animations`
+    - Button hover: sin spring (`hasSpring=false`)
+  - Reduced motion OFF:
+    - Navegación con fade: `minOpacity=0`
+    - Button spring restored: `true`
+  - Cleanup: página temporal eliminada, `git diff` solo `template.tsx`
+- **Archivos modificados:** `src/app/template.tsx` (skip AnimatePresence + limpiar import)
