@@ -152,3 +152,20 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Overflow horizontal:** Sin overflow horizontal en los 3 viewports
 - **Nota:** Layout validado en `src/app/dashboard/layout.tsx` (sin route group, conforme a corrección arquitectónica M01-022)
 - **Archivos modificados:** Ninguno
+
+## [M02-085] — Verificar dark mode persiste tras refresh
+- **Fecha:** 2026-04-17
+- **Resultado:** ✅ APROBADA (tras corrección)
+- **Defecto encontrado:** `<body>` en `src/app/layout.tsx` tenía clases hardcodeadas `bg-[#0A0A0A] text-white` que no respondían al sistema `darkMode: 'class'` de Tailwind. El ThemeProvider alternaba correctamente la clase en `<html>`, pero el body ignoraba el cambio.
+- **Corrección aplicada:**
+  - `bg-[#0A0A0A]` → `bg-white dark:bg-bg-base`
+  - `text-white` → `text-text-inverse dark:text-text-primary`
+- **Origen del defecto:** M01-012 (root layout inicial). Las tareas M02-023a/b integraron ThemeProvider pero instruyeron explícitamente NO modificar `<body>`.
+- **Tests ejecutados:** 6/6 PASS
+  - Test 1: Tema light — bodyBg rgb(255,255,255)
+  - Test 2: Tema dark — bodyBg rgb(10,10,10)
+  - Test 3: Default dark sin localStorage
+  - Test 4: No coexistencia clases dark/light
+  - Test 5: pnpm tsc + pnpm build
+  - Test 6: Regresión layout M02-084 (375/768/1024px)
+- **Archivos modificados:** `src/app/layout.tsx` (1 línea, className del body)
