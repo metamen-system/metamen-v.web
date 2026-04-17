@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { useReducedMotion } from '@/hooks/useReducedMotion';
-import { pageTransition, pageTransitionReduced } from '@/lib/animations/constants';
+import { pageTransition } from '@/lib/animations/constants';
 
 let hasHydratedOnce = false;
 
@@ -19,11 +19,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
 
   // useReducedMotion() returns boolean (true = reduce, false = normal).
-  // The project hook keeps the API consistent across all animated components.
+  // When reduced motion is active, skip AnimatePresence entirely to avoid
+  // navigation blocking (mode="wait" gets stuck with identical keyframes).
   const shouldReduceMotion = useReducedMotion();
-  const motionPreset = hasMounted && shouldReduceMotion ? pageTransitionReduced : pageTransition;
-
-  if (!hasMounted) {
+  if (!hasMounted || shouldReduceMotion) {
     return <div className="w-full">{children}</div>;
   }
 
@@ -31,10 +30,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={motionPreset.initial}
-        animate={motionPreset.animate}
-        exit={motionPreset.exit}
-        transition={motionPreset.transition}
+        initial={pageTransition.initial}
+        animate={pageTransition.animate}
+        exit={pageTransition.exit}
+        transition={pageTransition.transition}
         className="w-full"
       >
         {children}
