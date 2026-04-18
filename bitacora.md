@@ -122,3 +122,11 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Tipo de aprobación:** REAUDITORÍA CICLO 1
 - **Archivos:** `.env.example`, `.gitignore` (configuración)
 - **Rama:** setup/M03-supabase-init
+
+## [M03-002] — Guardar claves Supabase anon y service_role
+- **Fecha completación:** 2026-04-18
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:** — (tarea manual, sin archivos de código)
+- **Rama:** setup/M03-supabase-init
+- **Notas:** Claves API almacenadas en gestor de contraseñas. Clasificación SSOT verificada (anon=client-safe, service_role=server-only). `.env.local` configurada localmente (gitignored). `.env.example` tracked con clasificación correcta y sin valores reales.
