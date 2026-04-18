@@ -70,3 +70,6 @@ blob-report/
 
 # Bitácora interna de progreso
 bitacora.md
+
+supabase/.branches
+supabase/.temp

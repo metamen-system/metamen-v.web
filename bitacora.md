@@ -14,20 +14,20 @@
 
 | Campo | Valor |
 | --- | --- |
-| Fase actual | M02 en progreso (QA Integration en curso) |
-| Módulo en curso | **M02: Design System & Componentes UI** |
-| Última tarea completada | `M02-086` — Verificar reduced motion deshabilita animaciones (aprobada tras corrección) |
-| Próxima tarea | `M02-087` — Verificar Lottie placeholders son JSON válidos |
+| Fase actual | M03 en progreso (inicialización Supabase completada) |
+| Módulo en curso | **M03: Base de Datos & Esquema PostgreSQL** |
+| Última tarea completada | `M03-001` — Crear proyecto Supabase en supabase.com |
+| Próxima tarea | `M03-002` — Pendiente de ejecución |
 | Bloqueadores | Ninguno |
 | Fecha inicio proyecto | 2026-02-21 |
-| Branch | tooling/M02-qa-integration |
+| Branch | setup/M03-supabase-init |
 
 ## MAPA DE PROGRESO (MODULOS CORE)
 
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
-M02: Design System               [████████░░] 90/108
-M03: Base de Datos               [░░░░░░░░░░] 0/??
+M02: Design System               [████████░░] 91/108
+M03: Base de Datos               [█░░░░░░░░░] 1/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
 M06: Motor Transaccional         [░░░░░░░░░░] 0/??
@@ -49,9 +49,30 @@ M21: Background Jobs (Inngest)   [░░░░░░░░░░] 0/??
 M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 ```
 
+## RAMAS
+
+### MÓDULO 01 (COMPLETADO)
+
+- `setup/M01-base-infrastructure`
+- `feat/M01-routing-pages`
+- `setup/M01-architecture-folders`
+- `config/M01-security-pwa`
+- `tooling/M01-quality-ci`
+
+### MÓDULO 02 (COMPLETADO)
+
+- `config/M02-tailwind-tokens`
+- `feat/M02-theme-provider`
+- `config/M02-framer-presets`
+- `feat/M02-ui-atoms`
+- `feat/M02-modal-system`
+- `feat/M02-a11y-states`
+- `setup/M02-lottie-assets`
+- `tooling/M02-qa-integration`
+
 ## REGISTRO DE TAREAS COMPLETADAS
 
-- **Total actual**: 193 tareas completadas.
+- **Total actual**: 198 tareas completadas.
 
 ### BLOQUE CONSOLIDADO M01-001 a M01-110 (MODULO 01)
 
@@ -66,19 +87,19 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Seguridad y PWA base (middleware, headers, manifest, rutas base).
   - Tooling y CI/CD (ESLint, Prettier, Husky, workflows y checks).
 
-### BLOQUE CONSOLIDADO M02-001 a M02-078 (MODULO 02 — PARCIAL)
+### BLOQUE CONSOLIDADO M02-001 a M02-091 (MODULO 02)
 
-- **Rango**: `M02-001` → `M02-078`
-- **Estado global**: ✅ COMPLETADO / APROBADO (bloque parcial)
-- **Fecha de cierre del bloque**: 2026-04-13
+- **Rango**: `M02-001` → `M02-091`
+- **Estado global**: ✅ COMPLETADO / APROBADO (consolidado)
+- **Fecha de cierre del bloque**: 2026-04-18
 - **Módulo**: 02 — Design System & Componentes UI
 - **Aprobación auditoría**: 100% consolidado (incluye reauditorías)
 - **Resumen ejecutivo de entregables**:
   - Setup de utilidades UI y base de tokens de diseño en Tailwind v4.
-  - Theming, tipografías y sistema inicial de animaciones con Framer Motion.
-  - Sistema de modal, toasts y long-press interactions.
-  - Skeletons, focus trap, estados de UI y banner offline.
-  - Lottie placeholders, iconografía, layout responsive y barrel exports.
+  - Theming, tipografías y sistema de animaciones con soporte `prefers-reduced-motion`.
+  - Sistema de componentes UI: Button, Card, Input, Modal, Toast, LongPressButton, Skeletons.
+  - Validaciones QA de tokens, variantes, timings, focus trap, responsive layout, dark mode y placeholders Lottie.
+  - Verificaciones técnicas finales del módulo: `pnpm typecheck`, `pnpm build` y cierre de commit de módulo (M02-091).
 - **Ramas de trabajo consolidadas**:
   - `config/M02-tailwind-tokens`
   - `feat/M02-theme-provider`
@@ -87,112 +108,17 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - `feat/M02-modal-system`
   - `feat/M02-a11y-states`
   - `setup/M02-lottie-assets`
+  - `tooling/M02-qa-integration`
+- **Acciones QA consolidadas (M02-079 → M02-091)**:
+  - Verificación de compilación de tokens de color y utilidades Tailwind en CSS final.
+  - Verificación manual/visual de Button, LongPressButton, Modal, Toast, layout responsive, dark mode y reduced motion.
+  - Validación estructural de placeholders Lottie JSON y utilidades gradiente/shadow.
+  - Validación de pipeline técnico final: typecheck y build de producción.
+  - Cierre de módulo con commit final de M02.
 
-  ## [M02-079] — Verificar tokens de color en Tailwind compilados
-- **Fecha:** 2026-04-15
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: Ninguno
-  - Modificados: tailwind.config.ts
-- **Score auditoría:** 100% (post-corrección ciclo 1)
-- **Ciclos de auditoría:** 2
-- **Commit:** `fix(M02-079): correct rarity-common token to match SSOT #95A5A6`
-- **Rama:** tooling/M02-qa-integration
-- **Notas:** REAUDITORÍA CICLO 1. Corrección aplicada: `rarity-common` cambiado de `transparent` a `#95A5A6` (SSOT §8.7). Archivos auditados: `tailwind.config.ts`, `.next/static/css/*.css`.
-
-## [M02-080] — Verificar Button renderiza los 5 variants sin errores
-- **Fecha:** 2026-04-13
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
-  - Modificados: Ninguno (archivo temporal eliminado post-verificación)
+## [M03-001] — Crear proyecto Supabase en supabase.com
+- **Fecha completación:** 2026-04-18
 - **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (REAUDITORÍA CICLO 1)
-- **Commit:** `feat(M02-080): verify Button renders all 5 variants without errors`
-- **Rama:** tooling/M02-qa-integration
-- **Notas:** URL corregida a `/ui-test` por comportamiento de Route Groups en Next.js App Router; limpieza de `.next/types` aplicada post-eliminación.
-
-## [M02-081] — Verificar LongPressButton completa en 3000ms ± 100ms
-- **Fecha:** 2026-04-13
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
-  - Modificados: Ninguno (src/components/ui/LongPressButton.tsx verificado sin cambios)
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
-- **Commit:** `feat(M02-081): verify LongPressButton 3000ms timing compliance`
-- **Rama:** tooling/M02-qa-integration
-- **Notas:** Timing validado en navegador real: 3026ms (rango esperado 2900–3100ms); callback no se ejecuta en release prematuro; barra reinicia a 0%.
-
-## [M02-082] — Verificar Modal focus trap funciona con teclado
-- **Fecha:** 2026-04-13
-- **Módulo:** 02 — Design System & Componentes UI
-- **Tipo:** VERIFICACIÓN
-- **Archivos:**
-  - Creados: src/app/(dashboard)/ui-test/page.tsx (temporal)
-  - Modificados: src/components/ui/Modal.tsx
-- **Score auditoría:** 100%
-- **Ciclos de auditoría:** 1 (1 = aprobó a la primera)
-- **Commit:** `test(M02-082): verify Modal focus trap keyboard accessibility`
-- **Rama:** tooling/M02-qa-integration
-- **Notas:** Focus trap verificado con Tab/Shift+Tab (>=10 iteraciones), Escape funcional, ARIA válido, limpieza de archivo temporal y artefactos `.next/types` post-verificación.
-
-## [M02-084] — Verificar layout responsive en viewports clave
-- **Estado:** ✅ APROBADA
-- **Tipo:** VERIFICACIÓN
-- **Fecha:** 2026-04-17
-- **Rama:** tooling/M02-qa-integration
-- **Resultado:** 14/14 criterios aprobados
-- **375px (mobile):** MobileHeader visible, BottomNav visible, Sidebar ausente, padding-top 64px, padding-bottom 80px
-- **768px (tablet):** Sidebar 64px, MobileHeader ausente, BottomNav ausente, margin-left 64px
-- **1024px (desktop):** Sidebar 240px, margin-left 240px
-- **Overflow horizontal:** Sin overflow horizontal en los 3 viewports
-- **Nota:** Layout validado en `src/app/dashboard/layout.tsx` (sin route group, conforme a corrección arquitectónica M01-022)
-- **Archivos modificados:** Ninguno
-
-## [M02-085] — Verificar dark mode persiste tras refresh
-- **Fecha:** 2026-04-17
-- **Resultado:** ✅ APROBADA (tras corrección)
-- **Defecto encontrado:** `<body>` en `src/app/layout.tsx` tenía clases hardcodeadas `bg-[#0A0A0A] text-white` que no respondían al sistema `darkMode: 'class'` de Tailwind. El ThemeProvider alternaba correctamente la clase en `<html>`, pero el body ignoraba el cambio.
-- **Corrección aplicada:**
-  - `bg-[#0A0A0A]` → `bg-white dark:bg-bg-base`
-  - `text-white` → `text-text-inverse dark:text-text-primary`
-- **Origen del defecto:** M01-012 (root layout inicial). Las tareas M02-023a/b integraron ThemeProvider pero instruyeron explícitamente NO modificar `<body>`.
-- **Tests ejecutados:** 6/6 PASS
-  - Test 1: Tema light — bodyBg rgb(255,255,255)
-  - Test 2: Tema dark — bodyBg rgb(10,10,10)
-  - Test 3: Default dark sin localStorage
-  - Test 4: No coexistencia clases dark/light
-  - Test 5: pnpm tsc + pnpm build
-  - Test 6: Regresión layout M02-084 (375/768/1024px)
-- **Archivos modificados:** `src/app/layout.tsx` (1 línea, className del body)
-
-## [M02-086] — Verificar reduced motion deshabilita animaciones
-- **Fecha:** 2026-04-17
-- **Resultado:** ✅ APROBADA (tras corrección)
-- **Defecto encontrado:** `AnimatePresence mode="wait"` en `src/app/template.tsx` bloqueaba la navegación cuando `prefers-reduced-motion: reduce` estaba activo. La causa: `pageTransitionReduced` definía `initial/animate/exit` con valores idénticos (`opacity: 1`, `y: 0`), provocando que Framer Motion nunca completara la animación de exit, impidiendo el montaje del nuevo componente.
-- **Corrección aplicada:**
-  - Cuando `useReducedMotion()` retorna `true`, se renderiza `{children}` en un `<div>` plano, sin `AnimatePresence` ni `motion.div`.
-  - Eliminado import de `pageTransitionReduced` (ya no se usa).
-  - `AnimatePresence + pageTransition` solo se usan cuando reduced motion está OFF.
-- **Tests ejecutados:**
-  - Reduced motion ON:
-    - Navegación `/ui-test` → `/dashboard`: instantánea, `minOpacity=1`
-    - LottiePlayer: estático, `0 active animations`
-    - Button hover: sin spring (`hasSpring=false`)
-  - Reduced motion OFF:
-    - Navegación con fade: `minOpacity=0`
-    - Button spring restored: `true`
-  - Cleanup: página temporal eliminada, `git diff` solo `template.tsx`
-- **Archivos modificados:** `src/app/template.tsx` (skip AnimatePresence + limpiar import)
-
-## [M02-087] — Verificar Lottie placeholders son JSON válidos
-- **Fecha completación:** 2026-04-17
-- **Score auditoría:** 100%
-- **Tipo de aprobación:** REAUDITORÍA CICLO 1 (corrección de streak_fire.json + validación con Node.js)
-- **Archivos modificados:** `public/animations/streak_fire.json` (corregido w/h/op/layers)
-- **Rama:** tooling/M02-qa-integration
-- **Nota:** `streak_fire.json` tenía `w=100`, `h=100`, `op=60`, `layers=[{shape}]` — corregido a placeholder estándar `512x512`
+- **Tipo de aprobación:** REAUDITORÍA CICLO 1
+- **Archivos:** `.env.example`, `.gitignore` (configuración)
+- **Rama:** setup/M03-supabase-init
