@@ -14,10 +14,10 @@
 
 | Campo | Valor |
 | --- | --- |
-| Fase actual | M03 en progreso (inicialización Supabase completada) |
+| Fase actual | M03 en progreso (setup inicial de Supabase completado hasta M03-005) |
 | Módulo en curso | **M03: Base de Datos & Esquema PostgreSQL** |
-| Última tarea completada | `M03-001` — Crear proyecto Supabase en supabase.com |
-| Próxima tarea | `M03-002` — Pendiente de ejecución |
+| Última tarea completada | `M03-005` — Ejecutar supabase init en raíz del proyecto |
+| Próxima tarea | `M03-006` — Configurar supabase/config.toml con project_id |
 | Bloqueadores | Ninguno |
 | Fecha inicio proyecto | 2026-02-21 |
 | Branch | setup/M03-supabase-init |
@@ -27,7 +27,7 @@
 ```text
 M01: Infraestructura             [██████████] 110/110  ← COMPLETADO ✅
 M02: Design System               [████████░░] 91/108
-M03: Base de Datos               [█░░░░░░░░░] 1/??
+M03: Base de Datos               [██░░░░░░░░] 5/??
 M04: Autenticación               [░░░░░░░░░░] 0/??
 M05: Motor Core TS               [░░░░░░░░░░] 0/??
 M06: Motor Transaccional         [░░░░░░░░░░] 0/??
@@ -116,31 +116,24 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
   - Validación de pipeline técnico final: typecheck y build de producción.
   - Cierre de módulo con commit final de M02.
 
-## [M03-001] — Crear proyecto Supabase en supabase.com
-- **Fecha completación:** 2026-04-18
-- **Score auditoría:** 100%
-- **Tipo de aprobación:** REAUDITORÍA CICLO 1
-- **Archivos:** `.env.example`, `.gitignore` (configuración)
-- **Rama:** setup/M03-supabase-init
+### BLOQUE CONSOLIDADO M03-001 a M03-005 (MODULO 03 — SETUP INICIAL)
 
-## [M03-002] — Guardar claves Supabase anon y service_role
-- **Fecha completación:** 2026-04-18
-- **Score auditoría:** 100%
-- **Tipo de aprobación:** REAUDITORÍA CICLO 1
-- **Archivos:** — (tarea manual, sin archivos de código)
-- **Rama:** setup/M03-supabase-init
-- **Notas:** Claves API almacenadas en gestor de contraseñas. Clasificación SSOT verificada (anon=client-safe, service_role=server-only). `.env.local` configurada localmente (gitignored). `.env.example` tracked con clasificación correcta y sin valores reales.
+- **Rango**: `M03-001` → `M03-005`
+- **Estado global**: ✅ COMPLETADO / APROBADO (consolidado)
+- **Fecha de cierre del bloque**: 2026-04-18
+- **Módulo**: 03 — Base de Datos & Esquema PostgreSQL
+- **Aprobación auditoría**: 100% consolidado (incluye reauditorías)
+- **Rama de trabajo consolidada**: `setup/M03-supabase-init`
+- **Resumen ejecutivo de entregables**:
+  - `M03-001`: Proyecto Supabase `metamen-v.web` creado y activo.
+  - `M03-002`: Claves `anon` y `service_role` almacenadas de forma segura y clasificadas según SSOT.
+  - `M03-003`: Connection pooling (Supavisor, transaction mode, puerto `6543`) habilitado y validado.
+  - `M03-004`: Supabase CLI instalada y autenticada (`>=2.0.0`).
+  - `M03-005`: Scaffolding local creado (`supabase/config.toml`, `supabase/migrations/`, `supabase/functions/`, `.vscode/settings.json`, `.gitignore`).
 
-## [M03-003] — Habilitar y copiar connection pooling Supabase
+## [M03-006a + M03-006b] — Configurar project_id + sección [auth] en supabase/config.toml
 - **Fecha completación:** 2026-04-18
 - **Score auditoría:** 100%
-- **Tipo de aprobación:** REAUDITORÍA CICLO 2
-- **Archivos:** — (tarea manual, configuración en Supabase Dashboard)
-- **Rama:** setup/M03-supabase-init
-
-## [M03-005] — Ejecutar supabase init en raíz del proyecto
-- **Fecha completación:** 2026-04-18
-- **Score auditoría:** 100%
-- **Tipo de aprobación:** REAUDITORÍA CICLO 2
-- **Archivos:** `supabase/config.toml`, `supabase/migrations/`, `supabase/functions/`, `.vscode/settings.json`, `.gitignore`
+- **Tipo de aprobación:** RE-AUDITORÍA CICLO 1
+- **Archivos:** `supabase/config.toml`
 - **Rama:** setup/M03-supabase-init
