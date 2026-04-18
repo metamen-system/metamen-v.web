@@ -130,3 +130,10 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Archivos:** — (tarea manual, sin archivos de código)
 - **Rama:** setup/M03-supabase-init
 - **Notas:** Claves API almacenadas en gestor de contraseñas. Clasificación SSOT verificada (anon=client-safe, service_role=server-only). `.env.local` configurada localmente (gitignored). `.env.example` tracked con clasificación correcta y sin valores reales.
+
+## [M03-003] — Habilitar y copiar connection pooling Supabase
+- **Fecha completación:** 2026-04-18
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 2
+- **Archivos:** — (tarea manual, configuración en Supabase Dashboard)
+- **Rama:** setup/M03-supabase-init
