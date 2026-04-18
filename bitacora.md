@@ -137,3 +137,10 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Tipo de aprobación:** REAUDITORÍA CICLO 2
 - **Archivos:** — (tarea manual, configuración en Supabase Dashboard)
 - **Rama:** setup/M03-supabase-init
+
+## [M03-005] — Ejecutar supabase init en raíz del proyecto
+- **Fecha completación:** 2026-04-18
+- **Score auditoría:** 100%
+- **Tipo de aprobación:** REAUDITORÍA CICLO 2
+- **Archivos:** `supabase/config.toml`, `supabase/migrations/`, `supabase/functions/`, `.vscode/settings.json`, `.gitignore`
+- **Rama:** setup/M03-supabase-init
