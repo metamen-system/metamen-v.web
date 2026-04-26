@@ -136,4 +136,5 @@ M22: Estado & Data Fetching      [░░░░░░░░░░] 0/??
 - **Score auditoría:** 100%
 - **Tipo de aprobación:** RE-AUDITORÍA CICLO 1
 - **Archivos:** `supabase/config.toml`
+- **Commit:** `chore(M03-006): configure Supabase project auth`
 - **Rama:** setup/M03-supabase-init
